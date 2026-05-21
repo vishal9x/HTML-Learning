@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,7 +43,7 @@
       border-radius: 12px;
       margin-bottom: 18px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     summary {
@@ -98,6 +99,12 @@
       border-radius: 8px;
     }
 
+    .example-label {
+      margin-top: 12px;
+      font-weight: bold;
+      color: #1f2937;
+    }
+
     code {
       background: #111827;
       color: #f9fafb;
@@ -120,11 +127,14 @@
       margin-top: 15px;
     }
 
-    table, th, td {
+    table,
+    th,
+    td {
       border: 1px solid #ccc;
     }
 
-    th, td {
+    th,
+    td {
       padding: 12px;
       text-align: left;
     }
@@ -175,6 +185,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1>HTML Interview Questions with Practical Examples</h1>
@@ -189,7 +200,8 @@
       <div class="content">
         <div class="answer">
           <strong>Answer:</strong>
-          HTML (HyperText Markup Language) is the standard markup language used to create webpages and structure content on the internet. It is not a programming language.
+          HTML (HyperText Markup Language) is the standard markup language used to create webpages and structure content
+          on the internet. It is not a programming language.
         </div>
         <div class="practical">
           <h3>Defines elements like</h3>
@@ -201,7 +213,8 @@
             <li>Links</li>
             <li>Tables</li>
           </ul>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;h1&gt;This is heading&lt;/h1&gt;
 &lt;p&gt;This is paragraph&lt;/p&gt;
 </pre>
@@ -219,14 +232,33 @@
         </div>
         <div class="practical">
           <table>
-            <tr><th>HTML</th><th>HTML5</th></tr>
-            <tr><td>Older version</td><td>Latest version</td></tr>
-            <tr><td>Limited multimedia support</td><td>Native audio/video support</td></tr>
-            <tr><td>No semantic tags</td><td>Added semantic tags</td></tr>
-            <tr><td>Needed plugins like Flash</td><td>No plugins needed</td></tr>
-            <tr><td>Less storage support</td><td>localStorage/sessionStorage added</td></tr>
+            <tr>
+              <th>HTML</th>
+              <th>HTML5</th>
+            </tr>
+            <tr>
+              <td>Older version</td>
+              <td>Latest version</td>
+            </tr>
+            <tr>
+              <td>Limited multimedia support</td>
+              <td>Native audio/video support</td>
+            </tr>
+            <tr>
+              <td>No semantic tags</td>
+              <td>Added semantic tags</td>
+            </tr>
+            <tr>
+              <td>Needed plugins like Flash</td>
+              <td>No plugins needed</td>
+            </tr>
+            <tr>
+              <td>Less storage support</td>
+              <td>localStorage/sessionStorage added</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;header&gt;&lt;/header&gt;
 &lt;nav&gt;&lt;/nav&gt;
 &lt;section&gt;&lt;/section&gt;
@@ -253,6 +285,13 @@
             <li>Better accessibility</li>
             <li>Cleaner code structure</li>
           </ul>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;article&gt;
+  &lt;h2&gt;Interview Tips&lt;/h2&gt;
+  &lt;p&gt;Practice semantic HTML daily.&lt;/p&gt;
+&lt;/article&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -267,12 +306,25 @@
         </div>
         <div class="practical">
           <table>
-            <tr><th>id</th><th>class</th></tr>
-            <tr><td>Unique</td><td>Can be reused</td></tr>
-            <tr><td>One element only</td><td>Multiple elements</td></tr>
-            <tr><td>Accessed with #</td><td>Accessed with .</td></tr>
+            <tr>
+              <th>id</th>
+              <th>class</th>
+            </tr>
+            <tr>
+              <td>Unique</td>
+              <td>Can be reused</td>
+            </tr>
+            <tr>
+              <td>One element only</td>
+              <td>Multiple elements</td>
+            </tr>
+            <tr>
+              <td>Accessed with #</td>
+              <td>Accessed with .</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;div id="main"&gt;&lt;/div&gt;
 
 &lt;div class="box"&gt;&lt;/div&gt;
@@ -303,6 +355,11 @@
             <span>Inline 1</span>
             <span>Inline 2</span>
           </div>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;div&gt;I take full width&lt;/div&gt;
+&lt;span&gt;I take only content width&lt;/span&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -316,7 +373,8 @@
           DOCTYPE tells the browser which HTML version is used so pages render correctly.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;!DOCTYPE html&gt;
 </pre>
         </div>
@@ -332,7 +390,14 @@
           Self-closing tags do not need a separate closing tag.
         </div>
         <div class="practical">
-          <p>Examples: <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;meta&gt;</code></p>
+          <p>Examples: <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>,
+            <code>&lt;input&gt;</code>, <code>&lt;meta&gt;</code></p>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;img src="photo.jpg" alt="Demo image"&gt;
+&lt;br&gt;
+&lt;hr&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -347,12 +412,25 @@
         </div>
         <div class="practical">
           <table>
-            <tr><th>div</th><th>span</th></tr>
-            <tr><td>Block element</td><td>Inline element</td></tr>
-            <tr><td>Takes full width</td><td>Takes content width</td></tr>
-            <tr><td>Used for layout</td><td>Used for styling text</td></tr>
+            <tr>
+              <th>div</th>
+              <th>span</th>
+            </tr>
+            <tr>
+              <td>Block element</td>
+              <td>Inline element</td>
+            </tr>
+            <tr>
+              <td>Takes full width</td>
+              <td>Takes content width</td>
+            </tr>
+            <tr>
+              <td>Used for layout</td>
+              <td>Used for styling text</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;div&gt;Main container&lt;/div&gt;
 
 &lt;span&gt;Inline text&lt;/span&gt;
@@ -370,7 +448,8 @@
           Attributes provide extra information about elements.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;a href="https://google.com"&gt;Google&lt;/a&gt;
 </pre>
           <p>Here <code>href</code> is an attribute.</p>
@@ -388,11 +467,21 @@
         </div>
         <div class="practical">
           <table>
-            <tr><th>&lt;b&gt;</th><th>&lt;strong&gt;</th></tr>
-            <tr><td>Bold text only</td><td>Important text</td></tr>
-            <tr><td>No semantic meaning</td><td>Semantic importance</td></tr>
+            <tr>
+              <th>&lt;b&gt;</th>
+              <th>&lt;strong&gt;</th>
+            </tr>
+            <tr>
+              <td>Bold text only</td>
+              <td>Important text</td>
+            </tr>
+            <tr>
+              <td>No semantic meaning</td>
+              <td>Semantic importance</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;b&gt;Bold&lt;/b&gt;
 
 &lt;strong&gt;Important&lt;/strong&gt;
@@ -411,12 +500,39 @@
         </div>
         <div class="practical">
           <table>
-            <tr><th>GET</th><th>POST</th></tr>
-            <tr><td>Data visible in URL</td><td>Data hidden</td></tr>
-            <tr><td>Less secure</td><td>More secure</td></tr>
-            <tr><td>Used for fetching</td><td>Used for submitting</td></tr>
-            <tr><td>Limited data size</td><td>Large data allowed</td></tr>
+            <tr>
+              <th>GET</th>
+              <th>POST</th>
+            </tr>
+            <tr>
+              <td>Data visible in URL</td>
+              <td>Data hidden</td>
+            </tr>
+            <tr>
+              <td>Less secure</td>
+              <td>More secure</td>
+            </tr>
+            <tr>
+              <td>Used for fetching</td>
+              <td>Used for submitting</td>
+            </tr>
+            <tr>
+              <td>Limited data size</td>
+              <td>Large data allowed</td>
+            </tr>
           </table>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;!-- GET: search query in URL --&gt;
+&lt;form method="get" action="/search"&gt;
+  &lt;input name="q" placeholder="Search"&gt;
+&lt;/form&gt;
+
+&lt;!-- POST: form data in request body --&gt;
+&lt;form method="post" action="/register"&gt;
+  &lt;input name="email" type="email"&gt;
+&lt;/form&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -430,7 +546,8 @@
           HTML5 supports many input types for better validation and UX.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;input type="text"&gt;
 &lt;input type="email"&gt;
 &lt;input type="password"&gt;
@@ -451,7 +568,8 @@
           Validation checks if user input is correct before submission.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;input type="email" required&gt;
 </pre>
           <p>Browser checks:</p>
@@ -473,11 +591,21 @@
         </div>
         <div class="practical">
           <table>
-            <tr><th>Checkbox</th><th>Radio</th></tr>
-            <tr><td>Multiple selection</td><td>Single selection</td></tr>
-            <tr><td>Independent</td><td>Group based</td></tr>
+            <tr>
+              <th>Checkbox</th>
+              <th>Radio</th>
+            </tr>
+            <tr>
+              <td>Multiple selection</td>
+              <td>Single selection</td>
+            </tr>
+            <tr>
+              <td>Independent</td>
+              <td>Group based</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;input type="checkbox"&gt;
 
 &lt;input type="radio" name="gender"&gt;
@@ -496,12 +624,25 @@
         </div>
         <div class="practical">
           <table>
-            <tr><th>localStorage</th><th>sessionStorage</th></tr>
-            <tr><td>Permanent storage</td><td>Temporary storage</td></tr>
-            <tr><td>Remains after closing browser</td><td>Cleared after tab close</td></tr>
-            <tr><td>Larger storage</td><td>Session based</td></tr>
+            <tr>
+              <th>localStorage</th>
+              <th>sessionStorage</th>
+            </tr>
+            <tr>
+              <td>Permanent storage</td>
+              <td>Temporary storage</td>
+            </tr>
+            <tr>
+              <td>Remains after closing browser</td>
+              <td>Cleared after tab close</td>
+            </tr>
+            <tr>
+              <td>Larger storage</td>
+              <td>Session based</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 localStorage.setItem("name", "Vishal");
 sessionStorage.setItem("user", "admin");
 </pre>
@@ -520,7 +661,8 @@ sessionStorage.setItem("user", "admin");
         <div class="practical">
           <canvas id="myCanvas" width="300" height="120" style="border:1px solid black;"></canvas>
           <p>Used for games, charts, and animations.</p>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;canvas id="myCanvas"&gt;&lt;/canvas&gt;
 </pre>
         </div>
@@ -543,6 +685,12 @@ sessionStorage.setItem("user", "admin");
           <svg width="140" height="140" aria-label="SVG demo circle">
             <circle cx="70" cy="70" r="45" fill="#2563eb"></circle>
           </svg>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;svg width="100" height="100"&gt;
+  &lt;circle cx="50" cy="50" r="40" fill="tomato"&gt;&lt;/circle&gt;
+&lt;/svg&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -557,7 +705,8 @@ sessionStorage.setItem("user", "admin");
         </div>
         <div class="practical">
           <p>JavaScript uses DOM to modify elements, change styles, and handle events.</p>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 document.getElementById("demo");
 </pre>
         </div>
@@ -574,11 +723,33 @@ document.getElementById("demo");
         </div>
         <div class="practical">
           <table>
-            <tr><th>Cookies</th><th>localStorage</th><th>sessionStorage</th></tr>
-            <tr><td>Small data</td><td>Large data</td><td>Temporary data</td></tr>
-            <tr><td>Sent to server</td><td>Client-side only</td><td>Client-side only</td></tr>
-            <tr><td>Expiry supported</td><td>Permanent</td><td>Session only</td></tr>
+            <tr>
+              <th>Cookies</th>
+              <th>localStorage</th>
+              <th>sessionStorage</th>
+            </tr>
+            <tr>
+              <td>Small data</td>
+              <td>Large data</td>
+              <td>Temporary data</td>
+            </tr>
+            <tr>
+              <td>Sent to server</td>
+              <td>Client-side only</td>
+              <td>Client-side only</td>
+            </tr>
+            <tr>
+              <td>Expiry supported</td>
+              <td>Permanent</td>
+              <td>Session only</td>
+            </tr>
           </table>
+          <p class="example-label">Example:</p>
+          <pre>
+document.cookie = "theme=dark; max-age=3600";
+localStorage.setItem("language", "en");
+sessionStorage.setItem("tabStep", "2");
+</pre>
         </div>
       </div>
     </details>
@@ -593,7 +764,8 @@ document.getElementById("demo");
         </div>
         <div class="practical">
           <iframe src="https://example.com" width="100%" height="250" title="Example iframe"></iframe>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;iframe src="https://example.com"&gt;&lt;/iframe&gt;
 </pre>
         </div>
@@ -610,12 +782,25 @@ document.getElementById("demo");
         </div>
         <div class="practical">
           <table>
-            <tr><th>async</th><th>defer</th></tr>
-            <tr><td>Loads independently</td><td>Loads in order</td></tr>
-            <tr><td>Executes immediately</td><td>Executes after HTML parsing</td></tr>
-            <tr><td>May break order</td><td>Maintains order</td></tr>
+            <tr>
+              <th>async</th>
+              <th>defer</th>
+            </tr>
+            <tr>
+              <td>Loads independently</td>
+              <td>Loads in order</td>
+            </tr>
+            <tr>
+              <td>Executes immediately</td>
+              <td>Executes after HTML parsing</td>
+            </tr>
+            <tr>
+              <td>May break order</td>
+              <td>Maintains order</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;script async src="app.js"&gt;&lt;/script&gt;
 &lt;script defer src="app.js"&gt;&lt;/script&gt;
 </pre>
@@ -637,7 +822,8 @@ document.getElementById("demo");
             <input type="email" placeholder="Email" required>
             <button type="submit">Submit</button>
           </form>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;form&gt;
   &lt;input type="text" placeholder="Name" required&gt;
   &lt;input type="email" placeholder="Email" required&gt;
@@ -663,7 +849,8 @@ document.getElementById("demo");
             <article>Content</article>
           </section>
           <footer class="demo-box">Footer</footer>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;header&gt;Header&lt;/header&gt;
 &lt;nav&gt;Navbar&lt;/nav&gt;
 &lt;section&gt;
@@ -685,6 +872,14 @@ document.getElementById("demo");
         </div>
         <div class="practical">
           <p>Search engines and assistive tools understand semantic content better.</p>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Popular Questions&lt;/h2&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -698,9 +893,11 @@ document.getElementById("demo");
           alt text helps screen readers, improves accessibility, and appears when images fail.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;img src="cat.jpg" alt="Cute cat"&gt;
 </pre>
+          <p>If the image cannot load, users and screen readers can still understand the content from the alt text.</p>
         </div>
       </div>
     </details>
@@ -722,8 +919,13 @@ document.getElementById("demo");
             <li>JavaScript executed</li>
             <li>Page rendered</li>
           </ol>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;!-- Browser parses HTML to DOM, then paints after CSSOM + layout --&gt;
+</pre>
           <h3 style="margin-top: 20px;">Important Tip for Interviews</h3>
-          <p>Interviewers usually check semantic understanding, practical coding, accessibility awareness, clean structure, and confidence while explaining.</p>
+          <p>Interviewers usually check semantic understanding, practical coding, accessibility awareness, clean
+            structure, and confidence while explaining.</p>
           <p>Frontend interviews often combine HTML, CSS, JavaScript, responsive design, and browser behavior.</p>
         </div>
       </div>
@@ -739,12 +941,25 @@ document.getElementById("demo");
         </div>
         <div class="practical">
           <table>
-            <tr><th>HTML</th><th>XHTML</th></tr>
-            <tr><td>Flexible syntax</td><td>Strict syntax</td></tr>
-            <tr><td>Tags may remain unclosed</td><td>All tags must close</td></tr>
-            <tr><td>Case insensitive</td><td>Case sensitive</td></tr>
+            <tr>
+              <th>HTML</th>
+              <th>XHTML</th>
+            </tr>
+            <tr>
+              <td>Flexible syntax</td>
+              <td>Strict syntax</td>
+            </tr>
+            <tr>
+              <td>Tags may remain unclosed</td>
+              <td>All tags must close</td>
+            </tr>
+            <tr>
+              <td>Case insensitive</td>
+              <td>Case sensitive</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;br /&gt;
 &lt;img src="img.jpg" /&gt;
 </pre>
@@ -761,7 +976,8 @@ document.getElementById("demo");
           Meta tags provide metadata about a webpage.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;meta charset="UTF-8"&gt;
 &lt;meta name="description" content="Website description"&gt;
 </pre>
@@ -779,7 +995,8 @@ document.getElementById("demo");
           It controls page scaling and responsiveness on mobile devices.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 </pre>
         </div>
@@ -796,11 +1013,21 @@ document.getElementById("demo");
         </div>
         <div class="practical">
           <table>
-            <tr><th>link</th><th>a</th></tr>
-            <tr><td>Connects external resources</td><td>Creates hyperlinks</td></tr>
-            <tr><td>Mostly in head</td><td>Used in body</td></tr>
+            <tr>
+              <th>link</th>
+              <th>a</th>
+            </tr>
+            <tr>
+              <td>Connects external resources</td>
+              <td>Creates hyperlinks</td>
+            </tr>
+            <tr>
+              <td>Mostly in head</td>
+              <td>Used in body</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;link rel="stylesheet" href="style.css"&gt;
 &lt;a href="https://google.com"&gt;Google&lt;/a&gt;
 </pre>
@@ -817,7 +1044,8 @@ document.getElementById("demo");
           Data attributes are custom attributes to store extra data.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;div data-id="101"&gt;&lt;/div&gt;
 
 element.dataset.id
@@ -836,10 +1064,24 @@ element.dataset.id
         </div>
         <div class="practical">
           <table>
-            <tr><th>em</th><th>i</th></tr>
-            <tr><td>Adds semantic emphasis</td><td>Italic style only</td></tr>
-            <tr><td>Important for accessibility</td><td>Visual purpose</td></tr>
+            <tr>
+              <th>em</th>
+              <th>i</th>
+            </tr>
+            <tr>
+              <td>Adds semantic emphasis</td>
+              <td>Italic style only</td>
+            </tr>
+            <tr>
+              <td>Important for accessibility</td>
+              <td>Visual purpose</td>
+            </tr>
           </table>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;em&gt;This is important emphasis&lt;/em&gt;
+&lt;i&gt;Book title in italic&lt;/i&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -854,10 +1096,27 @@ element.dataset.id
         </div>
         <div class="practical">
           <table>
-            <tr><th>section</th><th>div</th></tr>
-            <tr><td>Semantic meaning</td><td>Generic container</td></tr>
-            <tr><td>Defines webpage section</td><td>Used for layout</td></tr>
+            <tr>
+              <th>section</th>
+              <th>div</th>
+            </tr>
+            <tr>
+              <td>Semantic meaning</td>
+              <td>Generic container</td>
+            </tr>
+            <tr>
+              <td>Defines webpage section</td>
+              <td>Used for layout</td>
+            </tr>
           </table>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;section&gt;
+  &lt;h2&gt;Pricing&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;div class="card"&gt;Generic box&lt;/div&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -871,7 +1130,8 @@ element.dataset.id
           HTML entities represent special characters safely.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &amp;lt;   for &lt;
 &amp;gt;   for &gt;
 &amp;nbsp; for space
@@ -889,7 +1149,8 @@ element.dataset.id
           alt improves accessibility, describes images, and helps SEO.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;img src="car.jpg" alt="Sports car"&gt;
 </pre>
         </div>
@@ -905,7 +1166,8 @@ element.dataset.id
           Ordered list uses numbers, unordered list uses bullets, description list uses term-description pairs.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;ol&gt;
   &lt;li&gt;Item&lt;/li&gt;
 &lt;/ol&gt;
@@ -933,9 +1195,23 @@ element.dataset.id
         </div>
         <div class="practical">
           <table>
-            <tr><th>cellpadding</th><th>cellspacing</th></tr>
-            <tr><td>Space inside cell</td><td>Space between cells</td></tr>
+            <tr>
+              <th>cellpadding</th>
+              <th>cellspacing</th>
+            </tr>
+            <tr>
+              <td>Space inside cell</td>
+              <td>Space between cells</td>
+            </tr>
           </table>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;table style="border-collapse: separate; border-spacing: 10px;"&gt;
+  &lt;tr&gt;
+    &lt;td style="padding: 12px;"&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -949,7 +1225,8 @@ element.dataset.id
           CSS can be written inline, inside style tags, or in external files.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 Inline:
 &lt;p style="color:red"&gt;Text&lt;/p&gt;
 
@@ -977,11 +1254,21 @@ External:
         </div>
         <div class="practical">
           <table>
-            <tr><th>src</th><th>href</th></tr>
-            <tr><td>Embeds resource</td><td>Links resource</td></tr>
-            <tr><td>Used in img/script</td><td>Used in anchor/link</td></tr>
+            <tr>
+              <th>src</th>
+              <th>href</th>
+            </tr>
+            <tr>
+              <td>Embeds resource</td>
+              <td>Links resource</td>
+            </tr>
+            <tr>
+              <td>Used in img/script</td>
+              <td>Used in anchor/link</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;img src="img.jpg"&gt;
 &lt;a href="page.html"&gt;Page&lt;/a&gt;
 </pre>
@@ -998,7 +1285,8 @@ External:
           Boilerplate is the basic structure of an HTML page.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -1024,6 +1312,14 @@ External:
         <div class="practical">
           <p>Examples: header, footer, main, article, aside, nav</p>
           <p>These improve SEO, accessibility, and structure.</p>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;header&gt;Site Header&lt;/header&gt;
+&lt;main&gt;
+  &lt;article&gt;Blog content&lt;/article&gt;
+&lt;/main&gt;
+&lt;footer&gt;Site Footer&lt;/footer&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -1037,7 +1333,8 @@ External:
           Favicon is the small icon shown in browser tabs.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;link rel="icon" href="favicon.ico"&gt;
 </pre>
         </div>
@@ -1050,10 +1347,12 @@ External:
       <div class="content">
         <div class="answer">
           <strong>Answer:</strong>
-          Scripts in head can block rendering unless async/defer is used. End-of-body scripts usually allow faster initial render.
+          Scripts in head can block rendering unless async/defer is used. End-of-body scripts usually allow faster
+          initial render.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;script defer src="app.js"&gt;&lt;/script&gt;
 </pre>
         </div>
@@ -1070,6 +1369,13 @@ External:
         </div>
         <div class="practical">
           <p>Examples include semantic tags, alt text, and form labels.</p>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;label for="name"&gt;Name&lt;/label&gt;
+&lt;input id="name" type="text" aria-required="true"&gt;
+
+&lt;img src="profile.jpg" alt="Profile photo of user"&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -1083,7 +1389,8 @@ External:
           label improves accessibility and user experience by connecting text with form fields.
         </div>
         <div class="practical">
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;label for="email"&gt;Email&lt;/label&gt;
 &lt;input type="email" id="email"&gt;
 </pre>
@@ -1101,11 +1408,21 @@ External:
         </div>
         <div class="practical">
           <table>
-            <tr><th>button</th><th>input</th></tr>
-            <tr><td>Can contain HTML</td><td>Text only</td></tr>
-            <tr><td>Flexible</td><td>Limited</td></tr>
+            <tr>
+              <th>button</th>
+              <th>input</th>
+            </tr>
+            <tr>
+              <td>Can contain HTML</td>
+              <td>Text only</td>
+            </tr>
+            <tr>
+              <td>Flexible</td>
+              <td>Limited</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;button&gt;
   &lt;strong&gt;Click&lt;/strong&gt;
 &lt;/button&gt;
@@ -1123,7 +1440,12 @@ External:
           Global attributes can be used on most HTML elements.
         </div>
         <div class="practical">
-          <p>Examples: <code>id</code>, <code>class</code>, <code>style</code>, <code>title</code>, <code>hidden</code></p>
+          <p>Examples: <code>id</code>, <code>class</code>, <code>style</code>, <code>title</code>, <code>hidden</code>
+          </p>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;p id="intro" class="lead" title="Intro text" hidden&gt;Hello&lt;/p&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -1138,11 +1460,21 @@ External:
         </div>
         <div class="practical">
           <table>
-            <tr><th>readonly</th><th>disabled</th></tr>
-            <tr><td>User cannot edit</td><td>Completely disabled</td></tr>
-            <tr><td>Value submitted</td><td>Value not submitted</td></tr>
+            <tr>
+              <th>readonly</th>
+              <th>disabled</th>
+            </tr>
+            <tr>
+              <td>User cannot edit</td>
+              <td>Completely disabled</td>
+            </tr>
+            <tr>
+              <td>Value submitted</td>
+              <td>Value not submitted</td>
+            </tr>
           </table>
-<pre>
+          <p class="example-label">Example:</p>
+          <pre>
 &lt;input readonly&gt;
 &lt;input disabled&gt;
 </pre>
@@ -1160,6 +1492,11 @@ External:
         </div>
         <div class="practical">
           <p>Goal: better compatibility and accessibility.</p>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;button type="submit"&gt;Save&lt;/button&gt;
+&lt;!-- Works without JavaScript; JS can later add loading spinner and validation --&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -1175,6 +1512,11 @@ External:
         <div class="practical">
           <p>Examples: <code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;marquee&gt;</code></p>
           <p>Use CSS instead.</p>
+          <p class="example-label">Example:</p>
+          <pre>
+&lt;!-- Old: &lt;font color="red"&gt;Text&lt;/font&gt; --&gt;
+&lt;p style="color: red;"&gt;Text&lt;/p&gt;
+</pre>
         </div>
       </div>
     </details>
@@ -1185,7 +1527,7 @@ External:
 
     const canvas = document.getElementById('myCanvas');
 
-    if(canvas){
+    if (canvas) {
       const ctx = canvas.getContext('2d');
 
       ctx.fillStyle = 'blue';
@@ -1199,4 +1541,5 @@ External:
   </script>
 
 </body>
+
 </html>
