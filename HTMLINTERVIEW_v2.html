@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Interview Questions — v2 (Curated from Industry Sources)</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 30px;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 6px;
+            color: #111;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .sources {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* ── Category headings ── */
+        .category-header {
+            max-width: 1100px;
+            margin: 40px auto 16px;
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .category-header.beginner {
+            background: #dcfce7;
+            color: #166534;
+            border-left: 6px solid #16a34a;
+        }
+
+        .category-header.intermediate {
+            background: #dbeafe;
+            color: #1e3a8a;
+            border-left: 6px solid #2563eb;
+        }
+
+        .category-header.advanced {
+            background: #fce7f3;
+            color: #831843;
+            border-left: 6px solid #db2777;
+        }
+
+        /* ── Accordion ── */
+        .accordion {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        details {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        summary {
+            padding: 18px 20px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            color: white;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '▼';
+            position: absolute;
+            right: 20px;
+            transition: 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        /* Different summary colours per category */
+        details.beginner summary {
+            background: #166534;
+        }
+
+        details.intermediate summary {
+            background: #1e3a8a;
+        }
+
+        details.advanced summary {
+            background: #831843;
+        }
+
+        .content {
+            padding: 24px;
+        }
+
+        .answer {
+            background: #eef4ff;
+            padding: 14px;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+
+        .practical {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-top: 14px;
+        }
+
+        .example-label {
+            margin-top: 12px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .output-label {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #059669;
+            font-size: 15px;
+        }
+
+        .output-preview {
+            margin-top: 8px;
+            padding: 15px 20px;
+            background: #ffffff;
+            border: 2px dashed #059669;
+            border-radius: 8px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .output-preview ol,
+        .output-preview ul {
+            padding-left: 22px;
+        }
+
+        .output-preview dl dt {
+            font-weight: bold;
+        }
+
+        .output-preview dl dd {
+            margin-left: 20px;
+        }
+
+        .output-no-visual {
+            margin-top: 8px;
+            padding: 10px 14px;
+            background: #fefce8;
+            border-left: 4px solid #ca8a04;
+            border-radius: 8px;
+            color: #713f12;
+            font-size: 14px;
+        }
+
+        .tag-badge {
+            display: inline-block;
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+            border-radius: 5px;
+            padding: 2px 8px;
+            font-size: 13px;
+            margin: 2px 2px;
+            font-family: monospace;
+        }
+
+        code {
+            background: #111827;
+            color: #f9fafb;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #f1f5f9;
+        }
+
+        iframe {
+            margin-top: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML Interview Questions — v2</h1>
+    <p class="subtitle">Curated from InterviewBit, GeeksForGeeks &amp; real developer interview reports (May 2026)</p>
+    <p class="sources">55 questions · 3 levels: <span style="color:#166534;font-weight:bold;">Beginner</span> · <span
+            style="color:#1e3a8a;font-weight:bold;">Intermediate</span> · <span
+            style="color:#831843;font-weight:bold;">Advanced</span></p>
+
+    <!-- ════════════════════════════════════════════
+       BEGINNER  Q1–Q15
+  ════════════════════════════════════════════ -->
+    <div class="category-header beginner">🟢 Beginner — Core HTML Fundamentals (Q1–Q15)</div>
+
+    <div class="accordion">
+
+        <!-- Q1 -->
+        <details class="beginner">
+            <summary>1. What is HTML? How is it different from HTML5?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> HTML (HyperText Markup Language) is the standard language for building web
+                    pages. HTML5 is the latest version (2014) that added semantic elements, native multimedia, Canvas,
+                    Web Storage, Geolocation, and more — removing the need for plugins like Flash.
+                </div>
+                <div class="practical">
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>HTML</th>
+                            <th>HTML5</th>
+                        </tr>
+                        <tr>
+                            <td>Doctype</td>
+                            <td>Long and complex</td>
+                            <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Multimedia</td>
+                            <td>Needs Flash plugin</td>
+                            <td>Native <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>Graphics</td>
+                            <td>No native support</td>
+                            <td><code>&lt;canvas&gt;</code>, SVG</td>
+                        </tr>
+                        <tr>
+                            <td>Forms</td>
+                            <td>Basic input types</td>
+                            <td>email, date, range, color…</td>
+                        </tr>
+                        <tr>
+                            <td>Semantic tags</td>
+                            <td>Only <code>&lt;div&gt;</code></td>
+                            <td><code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>…</td>
+                        </tr>
+                        <tr>
+                            <td>Storage</td>
+                            <td>Cookies only</td>
+                            <td>localStorage, sessionStorage</td>
+                        </tr>
+                    </table>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <pre
+                            style="margin:0;background:#1e293b;color:#f9fafb;border-radius:6px;padding:10px;font-size:13px;">&lt;!DOCTYPE html&gt;  ← HTML5 doctype (simple)
+&lt;html lang="en"&gt;
+  &lt;head&gt;...&lt;/head&gt;
+  &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q2 -->
+        <details class="beginner">
+            <summary>2. What is the basic structure of an HTML document?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Every HTML document has a DOCTYPE declaration, an <code>&lt;html&gt;</code>
+                    root, a <code>&lt;head&gt;</code> section for metadata, and a <code>&lt;body&gt;</code> section for
+                    visible content.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;p&gt;This is my page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <h1 style="font-size:1.6em;font-weight:bold;margin-bottom:4px;">Hello World</h1>
+                        <p>This is my page.</p>
+                        <p style="font-size:13px;color:#555;margin-top:8px;">The &lt;head&gt; content is invisible. Only
+                            what's inside &lt;body&gt; renders on the page.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q3 -->
+        <details class="beginner">
+            <summary>3. What is the difference between a tag, element, and attribute?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> A <em>tag</em> is the code inside angle brackets (<code>&lt;p&gt;</code>).
+                    An <em>element</em> is the full unit: opening tag + content + closing tag. An <em>attribute</em>
+                    adds extra information to a tag, written as <code>name="value"</code>.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;a href="https://google.com" target="_blank"&gt;Visit Google&lt;/a&gt;
+ ↑ tag      ↑ attribute                        ↑ content      ↑ closing tag
+ └──────────────── the full element ──────────────────────────┘
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <a href="https://google.com" target="_blank" rel="noopener noreferrer"
+                            style="color:#2563eb;text-decoration:underline;">Visit Google</a>
+                        <p style="font-size:13px;color:#555;margin-top:6px;">The link text "Visit Google" is visible.
+                            <code>href</code> and <code>target</code> are attributes — they're invisible but control
+                            behaviour.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q4 -->
+        <details class="beginner">
+            <summary>4. What are void (self-closing) elements in HTML?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Void elements have no closing tag and no content — they are complete on
+                    their own. Common examples: <code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>,
+                    <code>&lt;hr&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;meta&gt;</code>,
+                    <code>&lt;link&gt;</code>.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;img src="photo.jpg" alt="Demo"&gt;  ← no closing tag
+&lt;br&gt;                               ← just a line break
+&lt;hr&gt;                               ← horizontal rule
+&lt;input type="text"&gt;               ← form input
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div
+                            style="width:90px;height:60px;background:#d1d5db;border:1px dashed #9ca3af;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#6b7280;">
+                            🖼 photo.jpg</div>
+                        <p style="margin:6px 0;">Line one<br>Line two ← &lt;br&gt; forced the break</p>
+                        <hr style="border:1px solid #ccc;margin:6px 0;">
+                        <p style="font-size:13px;color:#555;">↑ &lt;hr&gt; draws that line</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q5 -->
+        <details class="beginner">
+            <summary>5. What is DOCTYPE and why is it needed?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;!DOCTYPE html&gt;</code> tells the browser this is an HTML5
+                    document. Without it, the browser enters "quirks mode" and renders the page using outdated rules,
+                    causing layout inconsistencies.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!DOCTYPE html&gt;   ← HTML5 (modern)
+&lt;html lang="en"&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-no-visual">&#9888; No visible output — DOCTYPE is an instruction to the browser,
+                        not content. It must be the very first line. With it: standards mode. Without it: quirks mode
+                        (unpredictable rendering).</div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q6 -->
+        <details class="beginner">
+            <summary>6. What is the difference between block-level and inline elements?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Block elements start on a new line and stretch full width
+                    (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>). Inline elements stay in
+                    the flow of text and only take as much width as their content (<code>&lt;span&gt;</code>,
+                    <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>).
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;div&gt;I am block — full row&lt;/div&gt;
+&lt;div&gt;Second block — new row&lt;/div&gt;
+&lt;span&gt;Inline&lt;/span&gt; stays on same line as &lt;span&gt;this&lt;/span&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div style="background:#93c5fd;padding:8px 12px;border-radius:5px;margin-bottom:4px;">I am block
+                            — takes full row</div>
+                        <div style="background:#93c5fd;padding:8px 12px;border-radius:5px;margin-bottom:8px;">Second
+                            block — starts on new row</div>
+                        <p>
+                            <span style="background:#fca5a5;padding:3px 7px;border-radius:4px;">Inline</span>
+                            stays on same line as
+                            <span style="background:#fca5a5;padding:3px 7px;border-radius:4px;">this</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q7 -->
+        <details class="beginner">
+            <summary>7. What is the difference between &lt;div&gt; and &lt;span&gt;?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Both are generic containers with no semantic meaning.
+                    <code>&lt;div&gt;</code> is block-level (used for sections/layout). <code>&lt;span&gt;</code> is
+                    inline (used for styling small pieces of text).
+                </div>
+                <div class="practical">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>&lt;div&gt;</th>
+                            <th>&lt;span&gt;</th>
+                        </tr>
+                        <tr>
+                            <td>Display</td>
+                            <td>Block</td>
+                            <td>Inline</td>
+                        </tr>
+                        <tr>
+                            <td>Width</td>
+                            <td>Full available width</td>
+                            <td>Content width only</td>
+                        </tr>
+                        <tr>
+                            <td>Typical use</td>
+                            <td>Layout sections, cards</td>
+                            <td>Highlight a word in a sentence</td>
+                        </tr>
+                    </table>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div style="background:#bfdbfe;padding:8px 12px;border-radius:5px;margin-bottom:8px;">div —
+                            takes full row</div>
+                        <p>Normal text with <span style="background:#fde68a;padding:2px 6px;border-radius:3px;">span
+                                highlight</span> in the middle of the sentence.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q8 -->
+        <details class="beginner">
+            <summary>8. What is the difference between id and class attributes?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>id</code> is unique — only one element per page can use a given id.
+                    <code>class</code> can be reused across many elements. CSS uses <code>#id</code> and
+                    <code>.class</code> respectively.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;div id="main"&gt;Unique element&lt;/div&gt;
+
+&lt;div class="card"&gt;Card 1&lt;/div&gt;
+&lt;div class="card"&gt;Card 2&lt;/div&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div
+                            style="background:#2563eb;color:white;padding:8px 12px;border-radius:6px;margin-bottom:6px;">
+                            #main — unique (only 1 per page)</div>
+                        <div
+                            style="background:#16a34a;color:white;padding:8px 12px;border-radius:6px;margin-bottom:4px;">
+                            .card — reusable class (element 1)</div>
+                        <div style="background:#16a34a;color:white;padding:8px 12px;border-radius:6px;">.card — reusable
+                            class (element 2)</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q9 -->
+        <details class="beginner">
+            <summary>9. What are semantic HTML elements and why do they matter?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Semantic elements clearly describe their purpose:
+                    <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+                    <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>,
+                    <code>&lt;footer&gt;</code>. They improve: (1) SEO — search engines understand content structure,
+                    (2) Accessibility — screen readers announce landmarks, (3) Code readability.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Semantic vs non-semantic:</p>
+                    <pre>
+&lt;!-- Non-semantic (tells nothing) --&gt;
+&lt;div class="top"&gt; &lt;div class="nav"&gt; &lt;div class="post"&gt;
+
+&lt;!-- Semantic (self-explaining) --&gt;
+&lt;header&gt; &lt;nav&gt; &lt;article&gt; &lt;footer&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div
+                            style="background:#1f2937;color:white;padding:7px 14px;border-radius:5px;margin-bottom:4px;font-weight:bold;">
+                            header</div>
+                        <div
+                            style="background:#374151;color:white;padding:6px 14px;border-radius:5px;margin-bottom:4px;">
+                            nav — Home | About | Contact</div>
+                        <div style="border:1px solid #cbd5e1;padding:10px;border-radius:5px;margin-bottom:4px;">
+                            <strong>article</strong> — main content area</div>
+                        <div style="background:#1f2937;color:white;padding:7px 14px;border-radius:5px;">footer — &copy;
+                            2026</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q10 -->
+        <details class="beginner">
+            <summary>10. What are HTML entities?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> HTML entities are codes used to display reserved characters (like
+                    <code>&lt;</code> or <code>&gt;</code>) or special symbols that aren't on a keyboard. They start
+                    with <code>&amp;</code> and end with <code>;</code>.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&amp;lt;   → &lt;
+&amp;gt;   → &gt;
+&amp;amp;  → &amp;
+&amp;nbsp; → non-breaking space
+&amp;copy; → ©
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <table>
+                            <tr>
+                                <th>Entity code</th>
+                                <th>Renders as</th>
+                            </tr>
+                            <tr>
+                                <td style="font-family:monospace;">&amp;lt;</td>
+                                <td>&lt;</td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:monospace;">&amp;gt;</td>
+                                <td>&gt;</td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:monospace;">&amp;amp;</td>
+                                <td>&amp;</td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:monospace;">&amp;nbsp;</td>
+                                <td>word&nbsp;&nbsp;&nbsp;gap</td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:monospace;">&amp;copy;</td>
+                                <td>&copy;</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q11 -->
+        <details class="beginner">
+            <summary>11. How do you create a hyperlink? What are absolute vs relative URLs?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Use the <code>&lt;a href="..."&gt;</code> tag. An absolute URL includes the
+                    full address (protocol + domain). A relative URL is relative to the current page's location.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!-- Absolute URL --&gt;
+&lt;a href="https://google.com"&gt;Google&lt;/a&gt;
+
+&lt;!-- Relative URL --&gt;
+&lt;a href="/about.html"&gt;About Us&lt;/a&gt;
+
+&lt;!-- Same page anchor --&gt;
+&lt;a href="#section1"&gt;Jump to Section&lt;/a&gt;
+
+&lt;!-- Email link --&gt;
+&lt;a href="mailto:user@example.com"&gt;Email Us&lt;/a&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><a href="https://google.com" target="_blank" rel="noopener noreferrer"
+                                style="color:#2563eb;text-decoration:underline;">Google</a> ← absolute URL, always works
+                            anywhere</p>
+                        <p style="margin-top:6px;"><a href="/about.html"
+                                style="color:#2563eb;text-decoration:underline;">About Us</a> ← relative URL, resolves
+                            from this site's root</p>
+                        <p style="margin-top:6px;"><a href="mailto:user@example.com"
+                                style="color:#2563eb;text-decoration:underline;">Email Us</a> ← opens the user's email
+                            client</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q12 -->
+        <details class="beginner">
+            <summary>12. What is the alt attribute in &lt;img&gt; and why is it important?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> The <code>alt</code> attribute provides a text description of an image. It
+                    matters for: (1) Accessibility — screen readers read it aloud, (2) SEO — search engines index it,
+                    (3) Broken image fallback — displayed when the image fails to load.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;img src="dog.jpg" alt="Golden retriever playing in a park"&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><strong>Image loads:</strong></p>
+                        <div
+                            style="width:120px;height:80px;background:#d1d5db;border:1px dashed #9ca3af;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#6b7280;">
+                            🐕 dog.jpg</div>
+                        <p style="margin-top:10px;"><strong>Image fails to load:</strong></p>
+                        <div
+                            style="display:inline-flex;align-items:center;gap:5px;border:1px solid #ccc;padding:5px 9px;border-radius:4px;font-size:13px;color:#555;background:#f9fafb;">
+                            🖼 Golden retriever playing in a park
+                        </div>
+                        <p style="font-size:13px;color:#555;margin-top:6px;">Screen readers always read the alt text
+                            aloud, whether the image loads or not.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q13 -->
+        <details class="beginner">
+            <summary>13. What are the different types of lists in HTML?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> HTML has three list types: (1) <code>&lt;ul&gt;</code> — unordered
+                    (bullets), (2) <code>&lt;ol&gt;</code> — ordered (numbers/letters), (3) <code>&lt;dl&gt;</code> —
+                    description list (term + definition pairs).
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;ul&gt;&lt;li&gt;HTML&lt;/li&gt;&lt;li&gt;CSS&lt;/li&gt;&lt;/ul&gt;
+
+&lt;ol&gt;&lt;li&gt;First&lt;/li&gt;&lt;li&gt;Second&lt;/li&gt;&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Markup language&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><strong>Unordered:</strong></p>
+                        <ul style="padding-left:20px;">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <p style="margin-top:8px;"><strong>Ordered:</strong></p>
+                        <ol style="padding-left:20px;">
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                        </ol>
+                        <p style="margin-top:8px;"><strong>Description list:</strong></p>
+                        <dl style="padding-left:10px;">
+                            <dt style="font-weight:bold;">HTML</dt>
+                            <dd style="margin-left:16px;color:#555;">Markup language for structure</dd>
+                            <dt style="font-weight:bold;">CSS</dt>
+                            <dd style="margin-left:16px;color:#555;">Language for styling</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q14 -->
+        <details class="beginner">
+            <summary>14. How do you make a link open in a new tab safely?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Use <code>target="_blank"</code> to open in a new tab. You
+                    <strong>must</strong> also add <code>rel="noopener noreferrer"</code> for security — without it, the
+                    new tab can access and manipulate your page via <code>window.opener</code>.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!-- ❌ Insecure --&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Link&lt;/a&gt;
+
+&lt;!-- ✅ Secure --&gt;
+&lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;Link&lt;/a&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <a href="https://example.com" target="_blank" rel="noopener noreferrer"
+                            style="color:#2563eb;text-decoration:underline;">Open in new tab (secure)</a>
+                        <p style="font-size:13px;color:#555;margin-top:6px;"><strong>noopener</strong> — prevents the
+                            new tab from accessing window.opener (stops phishing attacks). <strong>noreferrer</strong> —
+                            hides the referring URL from the destination site.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q15 -->
+        <details class="beginner">
+            <summary>15. What is the &lt;title&gt; tag and what are meta tags?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;title&gt;</code> sets the browser tab name and is critical for
+                    SEO. <code>&lt;meta&gt;</code> tags in <code>&lt;head&gt;</code> provide invisible metadata:
+                    character encoding, SEO description, social media previews, and mobile responsiveness.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;head&gt;
+  &lt;title&gt;My Website — Home&lt;/title&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="description" content="Learn web development tips"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div
+                            style="display:inline-flex;align-items:center;gap:8px;background:#1f2937;color:white;padding:5px 14px;border-radius:6px;font-size:13px;">
+                            <span>🌐</span><span>My Website — Home</span><span
+                                style="background:#374151;padding:1px 6px;border-radius:3px;">✕</span>
+                        </div>
+                        <p style="font-size:13px;color:#555;margin-top:8px;"><code>charset</code> — ensures characters
+                            display correctly. <code>description</code> — shown in Google search results.
+                            <code>viewport</code> — makes the site mobile-responsive.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+    </div><!-- /accordion beginner -->
+
+    <!-- ════════════════════════════════════════════
+       INTERMEDIATE  Q16–Q40
+  ════════════════════════════════════════════ -->
+    <div class="category-header intermediate">🔵 Intermediate — Forms, HTML5 Features &amp; Semantics (Q16–Q40)</div>
+
+    <div class="accordion">
+
+        <!-- Q16 -->
+        <details class="intermediate">
+            <summary>16. What are the different input types in HTML5?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> HTML5 expanded input types beyond just text. New types include email,
+                    password, number, date, time, range, color, tel, url, search, file, checkbox, radio, and hidden.
+                </div>
+                <div class="practical">
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p style="margin-bottom:6px;">Text: <input type="text" placeholder="Name"
+                                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;width:180px;">
+                        </p>
+                        <p style="margin-bottom:6px;">Email: <input type="email" placeholder="user@example.com"
+                                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;width:200px;">
+                        </p>
+                        <p style="margin-bottom:6px;">Password: <input type="password" placeholder="••••••••"
+                                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;width:180px;">
+                        </p>
+                        <p style="margin-bottom:6px;">Number: <input type="number" min="0" max="100"
+                                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;width:80px;">
+                        </p>
+                        <p style="margin-bottom:6px;">Date: <input type="date"
+                                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;"></p>
+                        <p style="margin-bottom:6px;">Range: <input type="range" min="0" max="100"></p>
+                        <p style="margin-bottom:6px;">Color: <input type="color" value="#2563eb"></p>
+                        <p>File: <input type="file" style="font-size:14px;"></p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q17 -->
+        <details class="intermediate">
+            <summary>17. What is the difference between GET and POST methods in forms?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> GET appends form data to the URL (visible, bookmarkable, for searches).
+                    POST sends data in the request body (hidden, for passwords, file uploads, sensitive data).
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;form method="get"  action="/search"&gt; ... &lt;/form&gt;
+&lt;form method="post" action="/login"&gt;  ... &lt;/form&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>GET</th>
+                                <th>POST</th>
+                            </tr>
+                            <tr>
+                                <td>Data in URL?</td>
+                                <td>✅ Yes — <code>/search?q=html</code></td>
+                                <td>❌ No — hidden in body</td>
+                            </tr>
+                            <tr>
+                                <td>Bookmarkable?</td>
+                                <td>✅ Yes</td>
+                                <td>❌ No</td>
+                            </tr>
+                            <tr>
+                                <td>Use for</td>
+                                <td>Search, filters</td>
+                                <td>Login, signup, file upload</td>
+                            </tr>
+                            <tr>
+                                <td>Data limit</td>
+                                <td>~2000 chars</td>
+                                <td>No practical limit</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q18 -->
+        <details class="intermediate">
+            <summary>18. What is HTML5 form validation? What attributes are used?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> HTML5 has built-in client-side validation via attributes:
+                    <code>required</code>, <code>type</code> (e.g., email, url), <code>min</code>/<code>max</code>,
+                    <code>minlength</code>/<code>maxlength</code>, and <code>pattern</code>. The browser validates on
+                    submit without any JavaScript.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;input type="email" required placeholder="Email"&gt;
+&lt;input type="text"  minlength="3" maxlength="20" required&gt;
+&lt;input type="number" min="18" max="99"&gt;
+&lt;input type="text"  pattern="[0-9]{10}" placeholder="Phone (10 digits)"&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (try submitting with bad data)</p>
+                    <div class="output-preview">
+                        <form onsubmit="event.preventDefault(); alert('Form is valid! ✅');">
+                            <p style="margin-bottom:6px;"><label>Email (required): <input type="email" required
+                                        placeholder="Try submitting empty or invalid"
+                                        style="padding:5px 8px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:250px;margin-left:6px;"></label>
+                            </p>
+                            <p style="margin-bottom:8px;"><label>Age (18-99): <input type="number" min="18" max="99"
+                                        style="padding:5px 8px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:80px;margin-left:6px;"></label>
+                            </p>
+                            <button type="submit"
+                                style="padding:7px 16px;background:#2563eb;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;font-weight:bold;">Submit</button>
+                        </form>
+                        <p style="font-size:13px;color:#555;margin-top:8px;">Click Submit with an empty field or a bad
+                            email — the browser shows built-in error messages with zero JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q19 -->
+        <details class="intermediate">
+            <summary>19. What is the &lt;label&gt; tag and why is it important for accessibility?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;label&gt;</code> links a text description to a form input via
+                    matching <code>for</code> and <code>id</code> values. Benefits: (1) Clicking the label focuses the
+                    input, (2) Screen readers announce the label with the field, (3) Larger click area on mobile.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;label for="email"&gt;Email address&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (click the label text to focus input)</p>
+                    <div class="output-preview">
+                        <p><label for="labelDemoV2" style="font-weight:bold;cursor:pointer;color:#2563eb;">Email
+                                address</label> &nbsp;
+                            <input type="email" id="labelDemoV2" placeholder="Click label ← to focus me"
+                                style="padding:5px 9px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:230px;">
+                        </p>
+                        <p style="font-size:13px;color:#555;margin-top:6px;">Click the words <strong>Email
+                                address</strong> — the cursor jumps into the input. Screen readers read: "Email address,
+                            text field."</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q20 -->
+        <details class="intermediate">
+            <summary>20. What is the difference between &lt;fieldset&gt;/&lt;legend&gt; and when should you use them?
+            </summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;fieldset&gt;</code> groups related form controls together.
+                    <code>&lt;legend&gt;</code> acts as the shared label for the group. Screen readers read the legend
+                    before each individual input — giving users context for the whole group (e.g., "Preferred contact
+                    method — Phone — radio button").
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;fieldset&gt;
+  &lt;legend&gt;Preferred contact method&lt;/legend&gt;
+  &lt;label&gt;&lt;input type="radio" name="contact"&gt; Phone&lt;/label&gt;
+  &lt;label&gt;&lt;input type="radio" name="contact"&gt; Email&lt;/label&gt;
+  &lt;label&gt;&lt;input type="radio" name="contact"&gt; SMS&lt;/label&gt;
+&lt;/fieldset&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <fieldset style="border:2px solid #cbd5e1;border-radius:6px;padding:12px;max-width:300px;">
+                            <legend style="font-weight:bold;padding:0 6px;">Preferred contact method</legend>
+                            <p style="margin:4px 0;"><label><input type="radio" name="contactV2"> Phone</label></p>
+                            <p style="margin:4px 0;"><label><input type="radio" name="contactV2"> Email</label></p>
+                            <p style="margin:4px 0;"><label><input type="radio" name="contactV2"> SMS</label></p>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q21 -->
+        <details class="intermediate">
+            <summary>21. What is the difference between &lt;textarea&gt; and &lt;input type="text"&gt;?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;input type="text"&gt;</code> is a single-line field.
+                    <code>&lt;textarea&gt;</code> is multi-line, resizable, and used for longer text like comments or
+                    messages. It uses rows/cols to set size.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;input type="text" placeholder="One line only"&gt;
+
+&lt;textarea rows="4" cols="40" placeholder="Multi-line input..."&gt;&lt;/textarea&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><strong>Single-line:</strong><br><input type="text"
+                                placeholder="One line only — can't go below"
+                                style="display:block;margin-top:4px;padding:7px 10px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:280px;">
+                        </p>
+                        <p style="margin-top:10px;"><strong>Multi-line (textarea):</strong><br><textarea rows="3"
+                                placeholder="You can write multiple lines here..."
+                                style="display:block;margin-top:4px;padding:7px 10px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:280px;resize:vertical;"></textarea>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q22 -->
+        <details class="intermediate">
+            <summary>22. What is a &lt;select&gt; dropdown and how does &lt;datalist&gt; differ?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;select&gt;</code> forces the user to choose from a fixed list.
+                    <code>&lt;datalist&gt;</code> paired with <code>&lt;input&gt;</code> gives suggestions but lets the
+                    user type anything — a hybrid of free text and autocomplete.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!-- Select: must choose from list --&gt;
+&lt;select&gt;
+  &lt;option&gt;React&lt;/option&gt;
+  &lt;option&gt;Vue&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Datalist: suggests, but user can type anything --&gt;
+&lt;input list="langs" placeholder="Type or choose..."&gt;
+&lt;datalist id="langs"&gt;
+  &lt;option value="HTML"&gt;
+  &lt;option value="CSS"&gt;
+  &lt;option value="JavaScript"&gt;
+&lt;/datalist&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><strong>Select dropdown:</strong><br>
+                            <select
+                                style="margin-top:4px;padding:6px 10px;border:1px solid #ccc;border-radius:5px;font-size:14px;">
+                                <option>React</option>
+                                <option>Vue</option>
+                                <option>Angular</option>
+                            </select>
+                        </p>
+                        <p style="margin-top:10px;"><strong>Datalist (type or pick):</strong><br>
+                            <input list="datalistDemoV2" placeholder="Type 'H', 'C' or 'J'..."
+                                style="margin-top:4px;padding:6px 10px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:220px;">
+                            <datalist id="datalistDemoV2">
+                                <option value="HTML">
+                                <option value="CSS">
+                                <option value="JavaScript">
+                                <option value="TypeScript">
+                            </datalist>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q23 -->
+        <details class="intermediate">
+            <summary>23. What is the difference between checkbox and radio button?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Checkboxes allow multiple selections. Radio buttons (same <code>name</code>
+                    attribute) allow only one selection from a group.
+                </div>
+                <div class="practical">
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><strong>Checkboxes</strong> — check as many as you like:</p>
+                        <p><label><input type="checkbox"> HTML &nbsp;</label>
+                            <label><input type="checkbox" checked> CSS &nbsp;</label>
+                            <label><input type="checkbox"> JavaScript</label>
+                        </p>
+                        <p style="margin-top:10px;"><strong>Radio buttons</strong> — only one can be selected:</p>
+                        <p><label><input type="radio" name="expV2"> Beginner &nbsp;</label>
+                            <label><input type="radio" name="expV2"> Intermediate &nbsp;</label>
+                            <label><input type="radio" name="expV2"> Advanced</label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q24 -->
+        <details class="intermediate">
+            <summary>24. What is the difference between &lt;b&gt;/&lt;i&gt; and &lt;strong&gt;/&lt;em&gt;?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> are purely presentational
+                    (bold/italic styling). <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> carry semantic
+                    meaning — screen readers stress <code>&lt;em&gt;</code> text and announce
+                    <code>&lt;strong&gt;</code> as important.
+                </div>
+                <div class="practical">
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><b>Bold text</b> &larr; &lt;b&gt; visual only, no semantic meaning</p>
+                        <p><strong>Important text</strong> &larr; &lt;strong&gt; visual bold + screen reader announces
+                            as important</p>
+                        <p style="margin-top:6px;"><i>Italic text</i> &larr; &lt;i&gt; visual only (e.g., book title,
+                            foreign term)</p>
+                        <p><em>Emphasised text</em> &larr; &lt;em&gt; visual italic + screen reader stresses this word
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q25 -->
+        <details class="intermediate">
+            <summary>25. What is the difference between &lt;section&gt;, &lt;article&gt;, and &lt;div&gt;?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;article&gt;</code> = self-contained content that makes sense on
+                    its own (blog post, product card). <code>&lt;section&gt;</code> = groups thematically related
+                    content that forms part of a larger whole. <code>&lt;div&gt;</code> = pure layout/styling container
+                    with no semantic meaning.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Real-world structure:</p>
+                    <pre>
+&lt;main&gt;
+  &lt;article&gt;                    &lt;!-- standalone blog post --&gt;
+    &lt;section&gt;Introduction&lt;/section&gt;
+    &lt;section&gt;Main body&lt;/section&gt;
+  &lt;/article&gt;
+  &lt;div class="sidebar-wrap"&gt;   &lt;!-- pure layout wrapper --&gt;
+    &lt;aside&gt;Related links&lt;/aside&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <article style="border:2px solid #2563eb;border-radius:6px;padding:10px;margin-bottom:8px;">
+                            <strong style="color:#2563eb;">&lt;article&gt;</strong> — Blog Post (self-contained, can be
+                            syndicated)
+                            <section
+                                style="border:1px dashed #9ca3af;border-radius:4px;padding:6px;margin-top:6px;font-size:13px;">
+                                &lt;section&gt; — Introduction</section>
+                        </article>
+                        <div style="border:2px solid #9ca3af;border-radius:6px;padding:10px;font-size:13px;">
+                            <strong>&lt;div&gt;</strong> — sidebar wrapper (no semantic meaning, used for CSS layout
+                            only)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q26 -->
+        <details class="intermediate">
+            <summary>26. What is Canvas in HTML5?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;canvas&gt;</code> provides a pixel-based drawing surface
+                    controlled entirely by JavaScript. Used for games, charts, and animations. Raster-based — it does
+                    not scale cleanly when zoomed.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;canvas id="demo" width="300" height="100"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  const ctx = document.getElementById('demo').getContext('2d');
+  ctx.fillStyle = '#2563eb';
+  ctx.fillRect(10, 10, 200, 60);
+  ctx.fillStyle = 'white';
+  ctx.font = '20px Arial';
+  ctx.fillText('Canvas Demo', 60, 48);
+&lt;/script&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <canvas id="canvasV2" width="300" height="100"
+                            style="border:1px solid #ccc;border-radius:6px;display:block;"></canvas>
+                        <p style="font-size:13px;color:#555;margin-top:6px;">The blue rectangle and white text above are
+                            drawn pixel-by-pixel by JavaScript using the Canvas 2D API.</p>
+                    </div>
+                    <script>
+                        const cv2 = document.getElementById('canvasV2');
+                        if (cv2) {
+                            const ctx2 = cv2.getContext('2d');
+                            ctx2.fillStyle = '#2563eb';
+                            ctx2.fillRect(10, 10, 280, 80);
+                            ctx2.fillStyle = 'white';
+                            ctx2.font = 'bold 20px Arial';
+                            ctx2.fillText('Canvas Demo ✓', 60, 58);
+                        }
+                    </script>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q27 -->
+        <details class="intermediate">
+            <summary>27. What is SVG? How does it differ from Canvas?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> SVG (Scalable Vector Graphics) defines shapes using XML markup. It scales
+                    perfectly at any resolution. Canvas draws pixels imperatively via JS. SVG shapes can be styled with
+                    CSS and manipulated with JS via the DOM.
+                </div>
+                <div class="practical">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>SVG</th>
+                            <th>Canvas</th>
+                        </tr>
+                        <tr>
+                            <td>Based on</td>
+                            <td>Vectors (shapes)</td>
+                            <td>Raster (pixels)</td>
+                        </tr>
+                        <tr>
+                            <td>Scaling</td>
+                            <td>Sharp at any zoom</td>
+                            <td>Gets blurry</td>
+                        </tr>
+                        <tr>
+                            <td>DOM access</td>
+                            <td>Yes — each shape is a DOM node</td>
+                            <td>No — just pixels</td>
+                        </tr>
+                        <tr>
+                            <td>Best for</td>
+                            <td>Icons, logos, charts</td>
+                            <td>Games, complex animations</td>
+                        </tr>
+                    </table>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <svg width="200" height="80" aria-label="SVG demo">
+                            <rect x="10" y="10" width="80" height="60" fill="#2563eb" rx="8" />
+                            <circle cx="160" cy="40" r="30" fill="tomato" />
+                            <text x="10" y="80" font-size="11" fill="#555">rect (SVG)
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; circle (SVG)</text>
+                        </svg>
+                        <p style="font-size:13px;color:#555;margin-top:6px;">Zoom in — SVG shapes stay perfectly sharp.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q28 -->
+        <details class="intermediate">
+            <summary>28. How do you embed audio and video in HTML5?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> HTML5 provides native <code>&lt;audio&gt;</code> and
+                    <code>&lt;video&gt;</code> elements — no Flash or plugins needed. Use the <code>controls</code>
+                    attribute to show playback controls. The <code>&lt;source&gt;</code> tag lets you specify multiple
+                    formats for browser compatibility.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;video controls width="320" poster="thumb.jpg"&gt;
+  &lt;source src="movie.mp4"  type="video/mp4"&gt;
+  &lt;source src="movie.webm" type="video/webm"&gt;
+  Your browser does not support video.
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  Your browser does not support audio.
+&lt;/audio&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p style="font-size:13px;color:#555;">The browser renders native, accessible video/audio players
+                            with play, pause, volume, and seek controls. No external libraries needed. Supported
+                            formats: MP4/WebM for video, MP3/OGG/WAV for audio.</p>
+                        <div
+                            style="border:2px dashed #9ca3af;border-radius:8px;padding:20px;background:#f1f5f9;text-align:center;font-size:13px;color:#6b7280;">
+                            🎥 &lt;video&gt; player renders here<br>
+                            🔊 &lt;audio&gt; player renders here
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q29 -->
+        <details class="intermediate">
+            <summary>29. What is an iframe? What is the sandbox attribute?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;iframe&gt;</code> embeds another webpage inside the current page.
+                    The <code>sandbox</code> attribute restricts what the embedded content can do (run scripts, submit
+                    forms, navigate parent). Always use sandbox when embedding untrusted content.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!-- Unsafe — no restrictions --&gt;
+&lt;iframe src="https://example.com"&gt;&lt;/iframe&gt;
+
+&lt;!-- Safe — sandbox restricts everything, re-enable only what's needed --&gt;
+&lt;iframe src="https://example.com"
+        sandbox="allow-scripts allow-same-origin"
+        title="Embedded page"&gt;&lt;/iframe&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <iframe src="https://example.com" width="100%" height="200" title="example.com embedded"
+                            style="border-radius:6px;border:1px solid #ccc;"></iframe>
+                        <p style="font-size:13px;color:#555;margin-top:6px;">The above box shows example.com rendered
+                            inside this page via &lt;iframe&gt;.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q30 -->
+        <details class="intermediate">
+            <summary>30. What is the DOM (Document Object Model)?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> The DOM is a tree-like in-memory representation of the HTML document that
+                    the browser creates when it parses HTML. JavaScript uses the DOM to read and modify elements,
+                    styles, and content — any change immediately reflects in the browser.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+document.getElementById('box').textContent = 'Changed!';
+document.querySelector('h1').style.color = 'red';
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (click the button)</p>
+                    <div class="output-preview">
+                        <p id="domDemoV2" style="padding:8px;background:#f1f5f9;border-radius:5px;">I am the element
+                            with id="domDemoV2"</p>
+                        <button
+                            onclick="document.getElementById('domDemoV2').textContent='DOM changed my text!'; document.getElementById('domDemoV2').style.color='#2563eb'; document.getElementById('domDemoV2').style.background='#dbeafe';"
+                            style="margin-top:8px;padding:6px 12px;background:#2563eb;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">Change
+                            via DOM</button>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q31 -->
+        <details class="intermediate">
+            <summary>31. What is the difference between localStorage, sessionStorage, and cookies?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> All three store data in the browser. Key differences: cookies are sent to
+                    the server with every request (useful for auth). localStorage persists until manually cleared.
+                    sessionStorage clears when the tab is closed.
+                </div>
+                <div class="practical">
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Cookie</th>
+                            <th>localStorage</th>
+                            <th>sessionStorage</th>
+                        </tr>
+                        <tr>
+                            <td>Capacity</td>
+                            <td>~4KB</td>
+                            <td>~5-10MB</td>
+                            <td>~5MB</td>
+                        </tr>
+                        <tr>
+                            <td>Sent to server?</td>
+                            <td>✅ Yes</td>
+                            <td>❌ No</td>
+                            <td>❌ No</td>
+                        </tr>
+                        <tr>
+                            <td>Expires</td>
+                            <td>Set manually</td>
+                            <td>Never (manual clear)</td>
+                            <td>Tab close</td>
+                        </tr>
+                        <tr>
+                            <td>Access</td>
+                            <td>JS + server</td>
+                            <td>JS only</td>
+                            <td>JS only</td>
+                        </tr>
+                        <tr>
+                            <td>Use for</td>
+                            <td>Auth tokens, tracking</td>
+                            <td>User preferences, theme</td>
+                            <td>Single-session data</td>
+                        </tr>
+                    </table>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-no-visual">&#9888; No visible output. Data is stored silently. View it in
+                        DevTools (F12) → Application → Cookies / Local Storage / Session Storage.</div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q32 -->
+        <details class="intermediate">
+            <summary>32. What is the difference between async and defer on &lt;script&gt; tags?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Both allow the script to download without blocking HTML parsing.
+                    <code>async</code> runs the script immediately when downloaded (may interrupt parsing, order not
+                    guaranteed). <code>defer</code> waits until HTML is fully parsed, then runs scripts in order. Use
+                    <code>defer</code> for most app scripts.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;script async src="analytics.js"&gt;&lt;/script&gt;  ← runs when ready, any order
+&lt;script defer src="app.js"&gt;&lt;/script&gt;        ← runs after DOM ready, in order
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div style="border:1px solid #cbd5e1;border-radius:6px;overflow:hidden;font-size:13px;">
+                            <div style="background:#fef3c7;padding:8px 12px;"><strong>async:</strong> Downloads in
+                                parallel → runs immediately when ready → may interrupt HTML parsing</div>
+                            <div style="background:#dcfce7;padding:8px 12px;"><strong>defer:</strong> Downloads in
+                                parallel → waits for full HTML parse → runs in document order ✓</div>
+                            <div style="background:#f1f5f9;padding:8px 12px;"><strong>Neither:</strong> Blocks HTML
+                                parsing until script downloads and runs ❌</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q33 -->
+        <details class="intermediate">
+            <summary>33. What are data-* attributes?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Custom <code>data-*</code> attributes let you store extra information on
+                    DOM elements without polluting the markup. JavaScript reads them via <code>element.dataset</code>.
+                    They're invisible on the page and perfect for event delegation patterns.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;button data-action="delete" data-id="42"&gt;Delete&lt;/button&gt;
+
+// JavaScript:
+const btn = document.querySelector('button');
+console.log(btn.dataset.action); // "delete"
+console.log(btn.dataset.id);     // "42"
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (click to read data attributes)</p>
+                    <div class="output-preview">
+                        <div id="dataDemoV2" data-id="101" data-role="admin" data-user="Vishal"
+                            style="padding:8px 12px;background:#f1f5f9;border-radius:5px;font-size:14px;">This element
+                            has hidden: data-id="101", data-role="admin", data-user="Vishal"</div>
+                        <button
+                            onclick="var el=document.getElementById('dataDemoV2'); alert('data-id: '+el.dataset.id+'\ndata-role: '+el.dataset.role+'\ndata-user: '+el.dataset.user);"
+                            style="margin-top:8px;padding:6px 12px;background:#2563eb;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">Read
+                            data attributes</button>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q34 -->
+        <details class="intermediate">
+            <summary>34. What are &lt;figure&gt; and &lt;figcaption&gt;?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;figure&gt;</code> groups self-contained content like an image or
+                    code snippet. <code>&lt;figcaption&gt;</code> provides the caption, semantically linking it to the
+                    figure. This helps search engines associate the text description with the visual content.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;figure&gt;
+  &lt;img src="chart.png" alt="Q1 sales chart"&gt;
+  &lt;figcaption&gt;Fig 1. Q1 Sales Data — March 2026&lt;/figcaption&gt;
+&lt;/figure&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <figure style="margin:0;text-align:center;max-width:250px;">
+                            <div
+                                style="width:240px;height:120px;background:#dbeafe;border:1px dashed #9ca3af;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#374151;">
+                                📊 chart.png</div>
+                            <figcaption style="font-size:13px;color:#666;margin-top:6px;font-style:italic;">Fig 1. Q1
+                                Sales Data — March 2026</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q35 -->
+        <details class="intermediate">
+            <summary>35. What is the &lt;picture&gt; element? How is it used for responsive images?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;picture&gt;</code> lets you define multiple image sources for
+                    different screen sizes or formats (WebP, AVIF). The browser selects the best match. The inner
+                    <code>&lt;img&gt;</code> is the fallback. It enables art direction (different crops for mobile vs
+                    desktop).
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;picture&gt;
+  &lt;source media="(min-width: 800px)" srcset="hero-desktop.webp" type="image/webp"&gt;
+  &lt;source media="(min-width: 800px)" srcset="hero-desktop.jpg"&gt;
+  &lt;img src="hero-mobile.jpg" alt="Hero image"&gt;
+&lt;/picture&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                            <div style="text-align:center;">
+                                <div
+                                    style="width:70px;height:50px;background:#dbeafe;border:1px dashed #9ca3af;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#555;">
+                                    📱 mobile</div>
+                                <p style="font-size:12px;margin-top:4px;color:#2563eb;">Small screen → hero-mobile.jpg
+                                </p>
+                            </div>
+                            <div style="text-align:center;">
+                                <div
+                                    style="width:120px;height:50px;background:#dcfce7;border:1px dashed #9ca3af;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#555;">
+                                    🖥 desktop</div>
+                                <p style="font-size:12px;margin-top:4px;color:#16a34a;">&gt;800px → hero-desktop.webp
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q36 -->
+        <details class="intermediate">
+            <summary>36. What is the &lt;details&gt; and &lt;summary&gt; element?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;details&gt;</code> creates a native browser accordion/disclosure
+                    widget. <code>&lt;summary&gt;</code> is the always-visible clickable header. No JavaScript needed —
+                    the browser handles toggle behaviour natively.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;details&gt;
+  &lt;summary&gt;What is HTML?&lt;/summary&gt;
+  &lt;p&gt;HTML is the standard markup language for building web pages.&lt;/p&gt;
+&lt;/details&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (click to expand)</p>
+                    <div class="output-preview">
+                        <details style="border:1px solid #cbd5e1;border-radius:6px;overflow:hidden;">
+                            <summary style="padding:10px 14px;cursor:pointer;background:#f8fafc;font-weight:bold;">What
+                                is HTML? (click me)</summary>
+                            <p style="padding:10px 14px;">HTML is the standard markup language for building web pages.
+                                This &lt;details&gt;/&lt;summary&gt; accordion requires zero JavaScript!</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q37 -->
+        <details class="intermediate">
+            <summary>37. What is the difference between &lt;link&gt; tag and &lt;a&gt; anchor tag?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;link&gt;</code> goes in <code>&lt;head&gt;</code>, is invisible,
+                    and declares a relationship between the document and an external resource (CSS, favicon, preload).
+                    <code>&lt;a&gt;</code> goes in <code>&lt;body&gt;</code>, is visible and clickable, and navigates
+                    the user to a URL.
+                </div>
+                <div class="practical">
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><strong>&lt;link rel="stylesheet"&gt;</strong> — invisible, loads a CSS file silently in the
+                            background</p>
+                        <p style="margin-top:8px;"><strong>&lt;a href="..."&gt;</strong> — visible: <a
+                                href="https://example.com" target="_blank" rel="noopener noreferrer"
+                                style="color:#2563eb;text-decoration:underline;">Clickable link</a></p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q38 -->
+        <details class="intermediate">
+            <summary>38. What is the difference between readonly and disabled input attributes?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>readonly</code> — value is visible and selectable but not editable;
+                    it IS submitted with the form. <code>disabled</code> — grayed out, not interactive, and NOT
+                    submitted with the form.
+                </div>
+                <div class="practical">
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><strong>readonly</strong> — visible, selectable, not editable, included in form submit:</p>
+                        <input type="text" readonly value="Cannot edit — but IS submitted"
+                            style="display:block;margin:4px 0 12px;padding:6px 10px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:300px;background:#f8fafc;color:#374151;">
+                        <p><strong>disabled</strong> — grayed out, not interactive, NOT included in form submit:</p>
+                        <input type="text" disabled value="Disabled — NOT submitted"
+                            style="display:block;margin:4px 0;padding:6px 10px;border:1px solid #d1d5db;border-radius:5px;font-size:14px;width:300px;background:#f3f4f6;color:#9ca3af;cursor:not-allowed;">
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q39 -->
+        <details class="intermediate">
+            <summary>39. What is the &lt;noscript&gt; tag?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;noscript&gt;</code> contains fallback content shown only when the
+                    browser has JavaScript disabled. It ensures your page remains usable and readable without JS —
+                    important for accessibility and graceful degradation.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;script&gt;
+  document.getElementById('app').innerHTML = '&lt;p&gt;JavaScript loaded ✓&lt;/p&gt;';
+&lt;/script&gt;
+
+&lt;noscript&gt;
+  &lt;p&gt;JavaScript is disabled. Please enable it for the full experience.&lt;/p&gt;
+&lt;/noscript&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-no-visual">&#9888; The &lt;noscript&gt; content is only visible when JavaScript
+                        is disabled. To test: go to DevTools → Settings → Disable JavaScript. With JS on (normal
+                        browsing), noscript content is completely hidden.</div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q40 -->
+        <details class="intermediate">
+            <summary>40. What is the enctype attribute in forms? When do you use multipart/form-data?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>enctype</code> defines how form data is encoded before sending to the
+                    server. Use <code>multipart/form-data</code> any time your form includes a file upload
+                    (<code>&lt;input type="file"&gt;</code>) — it allows binary data (images, PDFs) to be sent
+                    correctly.
+                </div>
+                <div class="practical">
+                    <table>
+                        <tr>
+                            <th>enctype value</th>
+                            <th>Use when</th>
+                        </tr>
+                        <tr>
+                            <td><code>application/x-www-form-urlencoded</code></td>
+                            <td>Default — text fields, no files</td>
+                        </tr>
+                        <tr>
+                            <td><code>multipart/form-data</code></td>
+                            <td>Any file upload (<code>type="file"</code>)</td>
+                        </tr>
+                        <tr>
+                            <td><code>text/plain</code></td>
+                            <td>Debugging only</td>
+                        </tr>
+                    </table>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <form onsubmit="event.preventDefault(); alert('File upload form submitted!');"
+                            enctype="multipart/form-data" method="post">
+                            <p><label>Upload a file: <input type="file" style="margin-left:6px;font-size:14px;"></label>
+                            </p>
+                            <button type="submit"
+                                style="margin-top:8px;padding:6px 14px;background:#2563eb;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+    </div><!-- /accordion intermediate -->
+
+    <!-- ════════════════════════════════════════════
+       ADVANCED  Q41–Q55
+  ════════════════════════════════════════════ -->
+    <div class="category-header advanced">🔴 Advanced — Performance, Security, Accessibility &amp; Modern APIs (Q41–Q55)
+    </div>
+
+    <div class="accordion">
+
+        <!-- Q41 -->
+        <details class="advanced">
+            <summary>41. What does rel="noopener noreferrer" do and why does it matter for security?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> When using <code>target="_blank"</code>, the new tab can access your page
+                    via <code>window.opener</code>, enabling phishing attacks (redirecting your original tab).
+                    <code>rel="noopener"</code> nullifies <code>window.opener</code>. <code>rel="noreferrer"</code>
+                    additionally hides the Referer header. Always use both.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!-- ❌ Vulnerable: new tab can redirect your page --&gt;
+&lt;a href="https://evil.com" target="_blank"&gt;Link&lt;/a&gt;
+
+&lt;!-- ✅ Safe: window.opener is null --&gt;
+&lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;Link&lt;/a&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p style="font-size:13px;">Without <code>noopener</code>: The new tab can run
+                            <code>window.opener.location = "https://phishing.com"</code> and silently redirect your
+                            original tab to a fake login page.</p>
+                        <p style="margin-top:8px;font-size:13px;">With <code>noopener</code>: <code>window.opener</code>
+                            is <code>null</code> in the new tab — the attack is blocked.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q42 -->
+        <details class="advanced">
+            <summary>42. What is lazy loading for images and when should you avoid it?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>loading="lazy"</code> defers image loading until the image is near
+                    the viewport, reducing initial page load weight. Avoid it for: (1) Hero images or any above-the-fold
+                    content — it delays what the user sees first, (2) Your LCP (Largest Contentful Paint) element — it
+                    hurts Core Web Vitals.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!-- ✅ Lazy load offscreen images --&gt;
+&lt;img src="thumbnail.jpg" alt="Product" loading="lazy"&gt;
+
+&lt;!-- ❌ Don't lazy load hero/above-fold --&gt;
+&lt;img src="hero.jpg" alt="Hero" loading="lazy"&gt;
+
+&lt;!-- ✅ Use fetchpriority for critical images --&gt;
+&lt;img src="hero.jpg" alt="Hero" fetchpriority="high"&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:13px;">
+                            <div style="background:#dcfce7;padding:8px 12px;border-radius:6px;">✅
+                                <strong>loading="lazy"</strong> — thumbnail at bottom of page — loads when scrolled near
+                            </div>
+                            <div style="background:#fee2e2;padding:8px 12px;border-radius:6px;">❌
+                                <strong>loading="lazy"</strong> on hero image — delays what user sees immediately</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q43 -->
+        <details class="advanced">
+            <summary>43. What is ARIA? When should you NOT use ARIA?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> ARIA (Accessible Rich Internet Applications) adds <code>role</code>,
+                    <code>aria-label</code>, <code>aria-expanded</code> etc. to help screen readers understand custom UI
+                    components. The #1 rule: <strong>no ARIA is better than bad ARIA</strong>. Don't use ARIA when a
+                    native HTML element already does the job.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!-- ❌ Recreating a button with ARIA --&gt;
+&lt;div role="button" onclick="submit()"&gt;Submit&lt;/div&gt;
+
+&lt;!-- ✅ Use the native element — no ARIA needed --&gt;
+&lt;button onclick="submit()"&gt;Submit&lt;/button&gt;
+
+&lt;!-- ✅ ARIA is needed for custom components --&gt;
+&lt;div role="dialog" aria-labelledby="title" aria-modal="true"&gt;
+  &lt;h2 id="title"&gt;Confirm Action&lt;/h2&gt;
+&lt;/div&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p><button aria-label="Close dialog"
+                                style="padding:6px 14px;background:#dc2626;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">✕
+                                Close</button>
+                            <span style="font-size:13px;color:#555;margin-left:10px;">← aria-label="Close dialog" tells
+                                screen readers what this icon button does</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q44 -->
+        <details class="advanced">
+            <summary>44. What is the &lt;dialog&gt; element and how do showModal() / close() work?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;dialog&gt;</code> is a native HTML element for modal/non-modal
+                    dialogs. It comes with built-in focus management, keyboard accessibility (Escape to close), and a
+                    CSS <code>::backdrop</code> pseudo-element. <code>showModal()</code> opens it as a modal.
+                    <code>close()</code> closes it.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;dialog id="myDialog"&gt;
+  &lt;h2&gt;Confirm?&lt;/h2&gt;
+  &lt;button onclick="document.getElementById('myDialog').close()"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+
+&lt;button onclick="document.getElementById('myDialog').showModal()"&gt;Open&lt;/button&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (click Open Dialog)</p>
+                    <div class="output-preview">
+                        <dialog id="dialogDemoV2"
+                            style="border-radius:10px;border:2px solid #1e3a8a;padding:20px 30px;min-width:240px;">
+                            <h2 style="font-size:1.1em;margin-bottom:10px;">Confirm Action?</h2>
+                            <p style="font-size:14px;color:#555;margin-bottom:14px;">This is a native HTML
+                                &lt;dialog&gt; element. Press Escape or click Close.</p>
+                            <button onclick="document.getElementById('dialogDemoV2').close();"
+                                style="padding:6px 14px;background:#dc2626;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">Close</button>
+                        </dialog>
+                        <button onclick="document.getElementById('dialogDemoV2').showModal();"
+                            style="padding:8px 18px;background:#1e3a8a;color:white;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:bold;">Open
+                            Dialog</button>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q45 -->
+        <details class="advanced">
+            <summary>45. What is the &lt;template&gt; tag?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>&lt;template&gt;</code> holds HTML that is parsed but not rendered.
+                    It's inert — scripts don't run, images don't load. JavaScript clones it and inserts it into the DOM
+                    when needed. Perfect for reusable components and dynamic content.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;template id="card-template"&gt;
+  &lt;div class="card"&gt;
+    &lt;h3&gt;Card Title&lt;/h3&gt;
+    &lt;p&gt;Card content here&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  const tpl = document.getElementById('card-template');
+  const clone = tpl.content.cloneNode(true);
+  document.body.appendChild(clone);
+&lt;/script&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (click Stamp Template)</p>
+                    <div class="output-preview">
+                        <template id="cardTplV2">
+                            <div
+                                style="border:2px solid #1e3a8a;border-radius:8px;padding:12px 16px;margin-top:6px;background:#dbeafe;">
+                                <strong style="color:#1e3a8a;">Card from &lt;template&gt;</strong>
+                                <p style="font-size:13px;color:#374151;margin-top:4px;">This card was invisible in the
+                                    DOM until JavaScript cloned and inserted the &lt;template&gt; content.</p>
+                            </div>
+                        </template>
+                        <div id="tplContainerV2"></div>
+                        <button
+                            onclick="var c=document.getElementById('cardTplV2').content.cloneNode(true); document.getElementById('tplContainerV2').appendChild(c);"
+                            style="padding:7px 14px;background:#1e3a8a;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">Stamp
+                            Template</button>
+                        <p style="font-size:13px;color:#555;margin-top:6px;">Each click stamps a new card — click
+                            multiple times.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q46 -->
+        <details class="advanced">
+            <summary>46. What are Web Components?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Web Components are a set of browser APIs to create reusable custom HTML
+                    elements. Three core technologies: (1) <strong>Custom Elements</strong> — define your own tags, (2)
+                    <strong>Shadow DOM</strong> — encapsulated styles and markup, (3) <strong>HTML Templates</strong> —
+                    reusable markup via <code>&lt;template&gt;</code>.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;my-card title="Hello"&gt;&lt;/my-card&gt;
+
+&lt;script&gt;
+class MyCard extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `&lt;div class="card"&gt;${this.getAttribute('title')}&lt;/div&gt;`;
+  }
+}
+customElements.define('my-card', MyCard);
+&lt;/script&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-no-visual">&#9888; Web Components require JavaScript and run in a live browser.
+                        The custom element renders like any other HTML element once defined. Shadow DOM keeps the
+                        component's styles isolated from the rest of the page.</div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q47 -->
+        <details class="advanced">
+            <summary>47. What is the tabindex attribute?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>tabindex</code> controls keyboard focus order. <code>0</code> =
+                    focusable in natural DOM order. <code>-1</code> = focusable via JS only, skipped by Tab key.
+                    Positive numbers set custom order (avoid in practice — it breaks natural flow).
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;button tabindex="0"&gt;Normal focus order&lt;/button&gt;
+&lt;div tabindex="0"&gt;This div is now keyboard focusable&lt;/div&gt;
+&lt;div tabindex="-1" id="modal"&gt;Focusable via JS only&lt;/div&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (press Tab to navigate)</p>
+                    <div class="output-preview">
+                        <p>
+                            <button tabindex="0"
+                                style="margin:4px;padding:6px 12px;border:2px solid #1e3a8a;border-radius:5px;background:white;cursor:pointer;font-size:14px;">Button
+                                1 (Tab stops here)</button>
+                            <button tabindex="0"
+                                style="margin:4px;padding:6px 12px;border:2px solid #1e3a8a;border-radius:5px;background:white;cursor:pointer;font-size:14px;">Button
+                                2 (Tab stops here)</button>
+                        </p>
+                        <div tabindex="0"
+                            style="margin:4px;padding:6px 12px;border:2px dashed #ca8a04;border-radius:5px;display:inline-block;cursor:pointer;font-size:14px;background:#fefce8;">
+                            div with tabindex="0" — keyboard focusable too</div>
+                        <p style="font-size:13px;color:#555;margin-top:6px;">Tab through the elements above — focus
+                            visually highlights each one.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q48 -->
+        <details class="advanced">
+            <summary>48. What is the contenteditable attribute?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>contenteditable="true"</code> makes any HTML element directly
+                    editable by the user in the browser. Used in rich text editors (like Notion or Medium's editor).
+                    Changes are in-memory only — you need JavaScript to persist them.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;div contenteditable="true"&gt;Click here and edit this text!&lt;/div&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (click and type directly)</p>
+                    <div class="output-preview">
+                        <div contenteditable="true"
+                            style="padding:12px;border:2px dashed #db2777;border-radius:8px;font-size:15px;min-height:50px;outline:none;background:#fdf2f8;">
+                            Click inside this box and start typing — it's directly editable in the browser!</div>
+                        <p style="font-size:13px;color:#555;margin-top:6px;">This is how rich text editors like Notion,
+                            Medium, and Quill work at their core.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q49 -->
+        <details class="advanced">
+            <summary>49. What are preload, prefetch, and preconnect? When to use each?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> All three are resource hints in <code>&lt;head&gt;</code>.
+                    <strong>preload</strong> — fetch this resource NOW, it's needed for this page (hero image, critical
+                    font). <strong>prefetch</strong> — low-priority fetch for resources the next navigation will need.
+                    <strong>preconnect</strong> — warm up DNS + TCP + TLS to a domain before the resource is requested.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!-- Warm up Google Fonts connection --&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+
+&lt;!-- Fetch hero image immediately --&gt;
+&lt;link rel="preload" as="image" href="hero.jpg"&gt;
+
+&lt;!-- Pre-fetch next page's bundle --&gt;
+&lt;link rel="prefetch" href="/about.js"&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;">
+                            <div style="background:#dbeafe;padding:8px 12px;border-radius:5px;">
+                                <strong>preconnect</strong> → Warms up connection early. No resource fetched yet.</div>
+                            <div style="background:#dcfce7;padding:8px 12px;border-radius:5px;"><strong>preload</strong>
+                                → Starts fetching hero.jpg immediately at high priority.</div>
+                            <div style="background:#fefce8;padding:8px 12px;border-radius:5px;">
+                                <strong>prefetch</strong> → Downloads about.js quietly in idle time for the next page.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q50 -->
+        <details class="advanced">
+            <summary>50. What is Subresource Integrity (SRI)?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> SRI lets you verify that an externally loaded file (from a CDN) hasn't been
+                    tampered with. You add an <code>integrity</code> attribute containing the expected file hash. If the
+                    hash doesn't match the downloaded file, the browser blocks it entirely.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;script
+  src="https://cdn.example.com/library.js"
+  integrity="sha384-abc123xyz..."
+  crossorigin="anonymous"&gt;
+&lt;/script&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div style="font-size:13px;">
+                            <p>1. Browser downloads library.js from the CDN</p>
+                            <p>2. Browser hashes the downloaded file content</p>
+                            <p style="color:#16a34a;font-weight:bold;">3a. Hash matches → script runs normally ✅</p>
+                            <p style="color:#dc2626;font-weight:bold;">3b. Hash mismatch → browser blocks the script
+                                entirely ❌ (you're protected from supply chain attacks)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q51 -->
+        <details class="advanced">
+            <summary>51. What is the Geolocation API in HTML5?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> The Geolocation API allows a web page to request the user's physical
+                    location via <code>navigator.geolocation.getCurrentPosition()</code>. The browser always prompts the
+                    user for permission. It's used for maps, local recommendations, and delivery apps.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+navigator.geolocation.getCurrentPosition(
+  position =&gt; {
+    console.log(position.coords.latitude, position.coords.longitude);
+  },
+  error =&gt; console.error(error)
+);
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (click to request location)</p>
+                    <div class="output-preview">
+                        <button onclick="
+              if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(
+                  p => document.getElementById('geoResultV2').textContent = 'Latitude: '+p.coords.latitude.toFixed(4)+' | Longitude: '+p.coords.longitude.toFixed(4),
+                  e => document.getElementById('geoResultV2').textContent = 'Permission denied or unavailable: '+e.message
+                );
+              } else {
+                document.getElementById('geoResultV2').textContent = 'Geolocation not supported';
+              }
+            " style="padding:7px 16px;background:#db2777;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">Get
+                            My Location</button>
+                        <p id="geoResultV2"
+                            style="margin-top:8px;font-size:14px;color:#374151;background:#fdf2f8;padding:8px 12px;border-radius:6px;min-height:36px;">
+                            → Click the button (browser will ask permission)</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q52 -->
+        <details class="advanced">
+            <summary>52. What are Web Workers in HTML5?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> Web Workers run JavaScript in a background thread — separate from the main
+                    UI thread. This prevents heavy computations from freezing the page. Workers cannot directly access
+                    the DOM; they communicate with the main thread via <code>postMessage()</code>.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+// main.js
+const worker = new Worker('worker.js');
+worker.postMessage({ data: largeArray });
+worker.onmessage = e =&gt; console.log('Result:', e.data);
+
+// worker.js
+self.onmessage = e =&gt; {
+  const result = heavyComputation(e.data);
+  self.postMessage(result);
+};
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-no-visual">&#9888; Web Workers run silently in the background — no visible
+                        output. The benefit is that the UI (scrolling, animations, clicks) stays responsive even while
+                        the worker handles an expensive operation like parsing a large file or number-crunching.</div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q53 -->
+        <details class="advanced">
+            <summary>53. What is the lang attribute and what does it affect?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> The <code>lang</code> attribute on <code>&lt;html&gt;</code> declares the
+                    document's language. It affects: (1) Screen reader pronunciation engines, (2) Browser hyphenation
+                    rules, (3) Google Translate source language detection, (4) CSS <code>:lang()</code> selector. Always
+                    set it, and override on specific elements for multilingual content.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;html lang="en"&gt;          ← whole page is English
+  &lt;blockquote lang="fr"&gt;  ← this quote is French
+    Bonjour le monde
+  &lt;/blockquote&gt;
+&lt;/html&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <p>English sentence. <span lang="fr" style="font-style:italic;color:#db2777;">«Bonjour le
+                                monde»</span> — the French text has <code>lang="fr"</code> so screen readers switch
+                            pronunciation engine for that phrase.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q54 -->
+        <details class="advanced">
+            <summary>54. What is Cumulative Layout Shift (CLS) and how do HTML choices reduce it?</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> CLS is a Core Web Vital measuring unexpected visual shifts during page load
+                    (e.g., an image popping in and pushing text down). Good score is below 0.1. Fix by: (1) always
+                    specifying <code>width</code>/<code>height</code> on images, (2) reserving space for ads, (3) using
+                    <code>aspect-ratio</code> in CSS.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+&lt;!-- ❌ No dimensions — causes layout shift --&gt;
+&lt;img src="banner.jpg" alt="Banner"&gt;
+
+&lt;!-- ✅ Dimensions reserved — no shift --&gt;
+&lt;img src="banner.jpg" alt="Banner" width="1200" height="400"&gt;
+
+&lt;!-- ✅ CSS aspect-ratio approach --&gt;
+&lt;style&gt;
+  img { width: 100%; aspect-ratio: 3 / 1; }
+&lt;/style&gt;
+</pre>
+                    <p class="output-label">&#128064; Output in browser:</p>
+                    <div class="output-preview">
+                        <div style="display:flex;gap:10px;font-size:13px;flex-wrap:wrap;">
+                            <div style="background:#fee2e2;padding:8px 12px;border-radius:6px;flex:1;">❌ No
+                                width/height: image loads → text below jumps down → CLS score increases</div>
+                            <div style="background:#dcfce7;padding:8px 12px;border-radius:6px;flex:1;">✅ width/height
+                                set: browser reserves exact space → text stays in place → CLS = 0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Q55 -->
+        <details class="advanced">
+            <summary>55. How do you safely update the DOM to avoid XSS? (textContent vs innerHTML)</summary>
+            <div class="content">
+                <div class="answer">
+                    <strong>Answer:</strong> <code>innerHTML</code> parses the string as HTML — if user input contains
+                    <code>&lt;script&gt;</code> tags, they execute. This is an XSS vulnerability.
+                    <code>textContent</code> treats everything as plain text, never executes it. Always use
+                    <code>textContent</code> for user-provided content. Only use <code>innerHTML</code> when needed, and
+                    sanitize first with DOMPurify.
+                </div>
+                <div class="practical">
+                    <p class="example-label">Example:</p>
+                    <pre>
+const input = '&lt;img src="x" onerror="alert(\'hacked\')"&gt;';
+
+// ❌ Dangerous — executes the onerror event
+element.innerHTML = input;
+
+// ✅ Safe — renders as literal text
+element.textContent = input;
+
+// ✅ Safe when HTML is truly needed
+element.innerHTML = DOMPurify.sanitize(input);
+</pre>
+                    <p class="output-label">&#128064; Output in browser: (try both)</p>
+                    <div class="output-preview">
+                        <p><strong>textContent</strong> (safe) renders this as literal text:</p>
+                        <p id="xssTextV2"
+                            style="background:#f1f5f9;padding:8px;border-radius:5px;font-family:monospace;font-size:13px;margin:4px 0 10px;">
+                        </p>
+                        <button
+                            onclick="document.getElementById('xssTextV2').textContent = '<img src=x onerror=alert(1)>';"
+                            style="padding:6px 12px;background:#16a34a;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;margin-bottom:8px;">Set
+                            via textContent (safe)</button>
+                        <p style="font-size:13px;color:#555;">The <code>&lt;img onerror=alert(1)&gt;</code> is shown as
+                            text — not executed. With <code>innerHTML</code> it would trigger an alert popup (XSS).</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+    </div><!-- /accordion advanced -->
+
+</body>
+
+</html>
