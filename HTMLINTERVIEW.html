@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Interview Questions Practical Guide</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      padding: 30px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #666;
+    }
+
+    .accordion {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    summary {
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      background: #1f2937;
+      color: white;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '▼';
+      position: absolute;
+      right: 20px;
+      transition: 0.3s;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .content {
+      padding: 25px;
+    }
+
+    .answer {
+      background: #eef4ff;
+      padding: 15px;
+      border-left: 5px solid #2563eb;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .practical {
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      margin-top: 15px;
+    }
+
+    .demo-box {
+      padding: 15px;
+      margin-top: 10px;
+      background: #e5e7eb;
+      border-radius: 8px;
+    }
+
+    code {
+      background: #111827;
+      color: #f9fafb;
+      padding: 3px 6px;
+      border-radius: 5px;
+    }
+
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    form input,
+    form select,
+    form textarea,
+    form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background: #1d4ed8;
+    }
+
+    .inline-demo span {
+      background: #fca5a5;
+      padding: 8px;
+    }
+
+    .block-demo div {
+      background: #93c5fd;
+      padding: 12px;
+      margin-top: 10px;
+    }
+
+    img {
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+
+    iframe {
+      margin-top: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Interview Questions with Practical Examples</h1>
+  <p class="subtitle">
+    Click each question to view the answer, explanation, and live practical example.
+  </p>
+
+  <div class="accordion">
+    <!-- Question 1 -->
+    <details>
+      <summary>1. What is HTML?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          HTML (HyperText Markup Language) is the standard markup language used to create webpages and structure content on the internet. It is not a programming language.
+        </div>
+        <div class="practical">
+          <h3>Defines elements like</h3>
+          <ul>
+            <li>Headings</li>
+            <li>Paragraphs</li>
+            <li>Images</li>
+            <li>Forms</li>
+            <li>Links</li>
+            <li>Tables</li>
+          </ul>
+<pre>
+&lt;h1&gt;This is heading&lt;/h1&gt;
+&lt;p&gt;This is paragraph&lt;/p&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 2 -->
+    <details>
+      <summary>2. Difference between HTML and HTML5?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          HTML5 is the latest version with semantic tags, native multimedia, and better browser capabilities.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>HTML</th><th>HTML5</th></tr>
+            <tr><td>Older version</td><td>Latest version</td></tr>
+            <tr><td>Limited multimedia support</td><td>Native audio/video support</td></tr>
+            <tr><td>No semantic tags</td><td>Added semantic tags</td></tr>
+            <tr><td>Needed plugins like Flash</td><td>No plugins needed</td></tr>
+            <tr><td>Less storage support</td><td>localStorage/sessionStorage added</td></tr>
+          </table>
+<pre>
+&lt;header&gt;&lt;/header&gt;
+&lt;nav&gt;&lt;/nav&gt;
+&lt;section&gt;&lt;/section&gt;
+&lt;article&gt;&lt;/article&gt;
+&lt;footer&gt;&lt;/footer&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 3 -->
+    <details>
+      <summary>3. What are semantic tags?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Semantic tags clearly describe the meaning of content.
+        </div>
+        <div class="practical">
+          <p><strong>Examples:</strong> header, footer, article, section, nav</p>
+          <p><strong>Benefits:</strong></p>
+          <ul>
+            <li>Better SEO</li>
+            <li>Better accessibility</li>
+            <li>Cleaner code structure</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 4 -->
+    <details>
+      <summary>4. Difference between id and class?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          <code>id</code> is unique for one element, while <code>class</code> can be reused on many elements.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>id</th><th>class</th></tr>
+            <tr><td>Unique</td><td>Can be reused</td></tr>
+            <tr><td>One element only</td><td>Multiple elements</td></tr>
+            <tr><td>Accessed with #</td><td>Accessed with .</td></tr>
+          </table>
+<pre>
+&lt;div id="main"&gt;&lt;/div&gt;
+
+&lt;div class="box"&gt;&lt;/div&gt;
+&lt;div class="box"&gt;&lt;/div&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 5 -->
+    <details>
+      <summary>5. What are block and inline elements?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Block elements take full width. Inline elements take only required width.
+        </div>
+        <div class="practical">
+          <h3>Block Elements</h3>
+          <p>Examples: div, p, h1, section</p>
+          <div class="block-demo">
+            <div>Block Element 1</div>
+            <div>Block Element 2</div>
+          </div>
+          <h3 style="margin-top: 20px;">Inline Elements</h3>
+          <p>Examples: span, a, strong</p>
+          <div class="inline-demo">
+            <span>Inline 1</span>
+            <span>Inline 2</span>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 6 -->
+    <details>
+      <summary>6. What is DOCTYPE in HTML?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          DOCTYPE tells the browser which HTML version is used so pages render correctly.
+        </div>
+        <div class="practical">
+<pre>
+&lt;!DOCTYPE html&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 7 -->
+    <details>
+      <summary>7. What are self-closing tags?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Self-closing tags do not need a separate closing tag.
+        </div>
+        <div class="practical">
+          <p>Examples: <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;meta&gt;</code></p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 8 -->
+    <details>
+      <summary>8. Difference between &lt;div&gt; and &lt;span&gt;?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          <code>div</code> is a block element; <code>span</code> is an inline element.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>div</th><th>span</th></tr>
+            <tr><td>Block element</td><td>Inline element</td></tr>
+            <tr><td>Takes full width</td><td>Takes content width</td></tr>
+            <tr><td>Used for layout</td><td>Used for styling text</td></tr>
+          </table>
+<pre>
+&lt;div&gt;Main container&lt;/div&gt;
+
+&lt;span&gt;Inline text&lt;/span&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 9 -->
+    <details>
+      <summary>9. What are HTML attributes?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Attributes provide extra information about elements.
+        </div>
+        <div class="practical">
+<pre>
+&lt;a href="https://google.com"&gt;Google&lt;/a&gt;
+</pre>
+          <p>Here <code>href</code> is an attribute.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 10 -->
+    <details>
+      <summary>10. Difference between &lt;b&gt; and &lt;strong&gt;?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          <code>b</code> is visual bold text, while <code>strong</code> carries semantic importance.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>&lt;b&gt;</th><th>&lt;strong&gt;</th></tr>
+            <tr><td>Bold text only</td><td>Important text</td></tr>
+            <tr><td>No semantic meaning</td><td>Semantic importance</td></tr>
+          </table>
+<pre>
+&lt;b&gt;Bold&lt;/b&gt;
+
+&lt;strong&gt;Important&lt;/strong&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 11 -->
+    <details>
+      <summary>11. Difference between GET and POST?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          GET sends data in URL, POST sends data in request body.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>GET</th><th>POST</th></tr>
+            <tr><td>Data visible in URL</td><td>Data hidden</td></tr>
+            <tr><td>Less secure</td><td>More secure</td></tr>
+            <tr><td>Used for fetching</td><td>Used for submitting</td></tr>
+            <tr><td>Limited data size</td><td>Large data allowed</td></tr>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 12 -->
+    <details>
+      <summary>12. What are different input types in HTML5?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          HTML5 supports many input types for better validation and UX.
+        </div>
+        <div class="practical">
+<pre>
+&lt;input type="text"&gt;
+&lt;input type="email"&gt;
+&lt;input type="password"&gt;
+&lt;input type="date"&gt;
+&lt;input type="number"&gt;
+&lt;input type="file"&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 13 -->
+    <details>
+      <summary>13. What is form validation?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Validation checks if user input is correct before submission.
+        </div>
+        <div class="practical">
+<pre>
+&lt;input type="email" required&gt;
+</pre>
+          <p>Browser checks:</p>
+          <ul>
+            <li>Empty field</li>
+            <li>Valid email format</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 14 -->
+    <details>
+      <summary>14. Difference between checkbox and radio button?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Checkbox allows multiple selections, radio allows one selection in a group.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>Checkbox</th><th>Radio</th></tr>
+            <tr><td>Multiple selection</td><td>Single selection</td></tr>
+            <tr><td>Independent</td><td>Group based</td></tr>
+          </table>
+<pre>
+&lt;input type="checkbox"&gt;
+
+&lt;input type="radio" name="gender"&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 15 -->
+    <details>
+      <summary>15. What is localStorage and sessionStorage?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Both store data in browser. localStorage is persistent; sessionStorage is tab-session based.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>localStorage</th><th>sessionStorage</th></tr>
+            <tr><td>Permanent storage</td><td>Temporary storage</td></tr>
+            <tr><td>Remains after closing browser</td><td>Cleared after tab close</td></tr>
+            <tr><td>Larger storage</td><td>Session based</td></tr>
+          </table>
+<pre>
+localStorage.setItem("name", "Vishal");
+sessionStorage.setItem("user", "admin");
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 16 -->
+    <details>
+      <summary>16. What is Canvas in HTML5?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Canvas is used to draw graphics using JavaScript.
+        </div>
+        <div class="practical">
+          <canvas id="myCanvas" width="300" height="120" style="border:1px solid black;"></canvas>
+          <p>Used for games, charts, and animations.</p>
+<pre>
+&lt;canvas id="myCanvas"&gt;&lt;/canvas&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 17 -->
+    <details>
+      <summary>17. What is SVG?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          SVG (Scalable Vector Graphics) is used for vector graphics.
+        </div>
+        <div class="practical">
+          <ul>
+            <li>Scalable without losing quality</li>
+            <li>Lightweight</li>
+          </ul>
+          <svg width="140" height="140" aria-label="SVG demo circle">
+            <circle cx="70" cy="70" r="45" fill="#2563eb"></circle>
+          </svg>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 18 -->
+    <details>
+      <summary>18. What is DOM?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          DOM (Document Object Model) represents HTML as a tree structure.
+        </div>
+        <div class="practical">
+          <p>JavaScript uses DOM to modify elements, change styles, and handle events.</p>
+<pre>
+document.getElementById("demo");
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 19 -->
+    <details>
+      <summary>19. Difference between cookies, localStorage, and sessionStorage?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          These are client-side storage options with different size, lifetime, and server behavior.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>Cookies</th><th>localStorage</th><th>sessionStorage</th></tr>
+            <tr><td>Small data</td><td>Large data</td><td>Temporary data</td></tr>
+            <tr><td>Sent to server</td><td>Client-side only</td><td>Client-side only</td></tr>
+            <tr><td>Expiry supported</td><td>Permanent</td><td>Session only</td></tr>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 20 -->
+    <details>
+      <summary>20. What is iframe?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          iframe embeds another webpage inside a webpage.
+        </div>
+        <div class="practical">
+          <iframe src="https://example.com" width="100%" height="250" title="Example iframe"></iframe>
+<pre>
+&lt;iframe src="https://example.com"&gt;&lt;/iframe&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 21 -->
+    <details>
+      <summary>21. Difference between async and defer?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Both are used with external scripts, but loading and execution order differ.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>async</th><th>defer</th></tr>
+            <tr><td>Loads independently</td><td>Loads in order</td></tr>
+            <tr><td>Executes immediately</td><td>Executes after HTML parsing</td></tr>
+            <tr><td>May break order</td><td>Maintains order</td></tr>
+          </table>
+<pre>
+&lt;script async src="app.js"&gt;&lt;/script&gt;
+&lt;script defer src="app.js"&gt;&lt;/script&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 22 -->
+    <details>
+      <summary>22. Create a Simple Form</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          A simple form collects user details using basic input types.
+        </div>
+        <div class="practical">
+          <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit">Submit</button>
+          </form>
+<pre>
+&lt;form&gt;
+  &lt;input type="text" placeholder="Name" required&gt;
+  &lt;input type="email" placeholder="Email" required&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 23 -->
+    <details>
+      <summary>23. Create Semantic Layout</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Semantic layout uses meaningful HTML5 tags for clear structure.
+        </div>
+        <div class="practical">
+          <header class="demo-box">Header</header>
+          <nav class="demo-box">Navbar</nav>
+          <section class="demo-box">
+            <article>Content</article>
+          </section>
+          <footer class="demo-box">Footer</footer>
+<pre>
+&lt;header&gt;Header&lt;/header&gt;
+&lt;nav&gt;Navbar&lt;/nav&gt;
+&lt;section&gt;
+  &lt;article&gt;Content&lt;/article&gt;
+&lt;/section&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 24 -->
+    <details>
+      <summary>24. Why is semantic HTML important?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Semantic HTML improves SEO, accessibility, readability, and maintainability.
+        </div>
+        <div class="practical">
+          <p>Search engines and assistive tools understand semantic content better.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 25 -->
+    <details>
+      <summary>25. Why use alt in images?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          alt text helps screen readers, improves accessibility, and appears when images fail.
+        </div>
+        <div class="practical">
+<pre>
+&lt;img src="cat.jpg" alt="Cute cat"&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 26 -->
+    <details>
+      <summary>26. What happens when webpage loads in browser?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Browser follows a rendering pipeline from request to final painted UI.
+        </div>
+        <div class="practical">
+          <ol>
+            <li>Browser requests webpage</li>
+            <li>Server sends HTML</li>
+            <li>Browser parses HTML</li>
+            <li>CSS applied</li>
+            <li>JavaScript executed</li>
+            <li>Page rendered</li>
+          </ol>
+          <h3 style="margin-top: 20px;">Important Tip for Interviews</h3>
+          <p>Interviewers usually check semantic understanding, practical coding, accessibility awareness, clean structure, and confidence while explaining.</p>
+          <p>Frontend interviews often combine HTML, CSS, JavaScript, responsive design, and browser behavior.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 27 -->
+    <details>
+      <summary>27. What is the difference between HTML and XHTML?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          XHTML follows strict XML-style rules compared to flexible HTML syntax.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>HTML</th><th>XHTML</th></tr>
+            <tr><td>Flexible syntax</td><td>Strict syntax</td></tr>
+            <tr><td>Tags may remain unclosed</td><td>All tags must close</td></tr>
+            <tr><td>Case insensitive</td><td>Case sensitive</td></tr>
+          </table>
+<pre>
+&lt;br /&gt;
+&lt;img src="img.jpg" /&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 28 -->
+    <details>
+      <summary>28. What are meta tags?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Meta tags provide metadata about a webpage.
+        </div>
+        <div class="practical">
+<pre>
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="description" content="Website description"&gt;
+</pre>
+          <p>Used for SEO, browser settings, and responsiveness.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 29 -->
+    <details>
+      <summary>29. What is viewport meta tag?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          It controls page scaling and responsiveness on mobile devices.
+        </div>
+        <div class="practical">
+<pre>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 30 -->
+    <details>
+      <summary>30. What is the difference between link and anchor tag?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          <code>link</code> connects external resources, <code>a</code> creates hyperlinks.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>link</th><th>a</th></tr>
+            <tr><td>Connects external resources</td><td>Creates hyperlinks</td></tr>
+            <tr><td>Mostly in head</td><td>Used in body</td></tr>
+          </table>
+<pre>
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;a href="https://google.com"&gt;Google&lt;/a&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 31 -->
+    <details>
+      <summary>31. What are data attributes in HTML?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Data attributes are custom attributes to store extra data.
+        </div>
+        <div class="practical">
+<pre>
+&lt;div data-id="101"&gt;&lt;/div&gt;
+
+element.dataset.id
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 32 -->
+    <details>
+      <summary>32. What is the difference between em and i tags?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          <code>em</code> gives semantic emphasis while <code>i</code> is usually visual italics.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>em</th><th>i</th></tr>
+            <tr><td>Adds semantic emphasis</td><td>Italic style only</td></tr>
+            <tr><td>Important for accessibility</td><td>Visual purpose</td></tr>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 33 -->
+    <details>
+      <summary>33. What is the difference between section and div?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          <code>section</code> is semantic, while <code>div</code> is a generic container.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>section</th><th>div</th></tr>
+            <tr><td>Semantic meaning</td><td>Generic container</td></tr>
+            <tr><td>Defines webpage section</td><td>Used for layout</td></tr>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 34 -->
+    <details>
+      <summary>34. What are HTML entities?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          HTML entities represent special characters safely.
+        </div>
+        <div class="practical">
+<pre>
+&amp;lt;   for &lt;
+&amp;gt;   for &gt;
+&amp;nbsp; for space
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 35 -->
+    <details>
+      <summary>35. What is the purpose of alt attribute?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          alt improves accessibility, describes images, and helps SEO.
+        </div>
+        <div class="practical">
+<pre>
+&lt;img src="car.jpg" alt="Sports car"&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 36 -->
+    <details>
+      <summary>36. Difference between ol, ul, and dl?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Ordered list uses numbers, unordered list uses bullets, description list uses term-description pairs.
+        </div>
+        <div class="practical">
+<pre>
+&lt;ol&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Markup language&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 37 -->
+    <details>
+      <summary>37. What is the difference between cellpadding and cellspacing?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          cellpadding is space inside a cell, cellspacing is space between cells. Modern projects prefer CSS.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>cellpadding</th><th>cellspacing</th></tr>
+            <tr><td>Space inside cell</td><td>Space between cells</td></tr>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 38 -->
+    <details>
+      <summary>38. What are inline, internal, and external CSS?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          CSS can be written inline, inside style tags, or in external files.
+        </div>
+        <div class="practical">
+<pre>
+Inline:
+&lt;p style="color:red"&gt;Text&lt;/p&gt;
+
+Internal:
+&lt;style&gt;
+p {
+  color: red;
+}
+&lt;/style&gt;
+
+External:
+&lt;link rel="stylesheet" href="style.css"&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 39 -->
+    <details>
+      <summary>39. What is the difference between src and href?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          <code>src</code> embeds resources; <code>href</code> links resources.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>src</th><th>href</th></tr>
+            <tr><td>Embeds resource</td><td>Links resource</td></tr>
+            <tr><td>Used in img/script</td><td>Used in anchor/link</td></tr>
+          </table>
+<pre>
+&lt;img src="img.jpg"&gt;
+&lt;a href="page.html"&gt;Page&lt;/a&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 40 -->
+    <details>
+      <summary>40. What is HTML Boilerplate?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Boilerplate is the basic structure of an HTML page.
+        </div>
+        <div class="practical">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 41 -->
+    <details>
+      <summary>41. What are semantic elements in HTML5?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Semantic elements describe the purpose of content blocks.
+        </div>
+        <div class="practical">
+          <p>Examples: header, footer, main, article, aside, nav</p>
+          <p>These improve SEO, accessibility, and structure.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 42 -->
+    <details>
+      <summary>42. What is favicon?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Favicon is the small icon shown in browser tabs.
+        </div>
+        <div class="practical">
+<pre>
+&lt;link rel="icon" href="favicon.ico"&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 43 -->
+    <details>
+      <summary>43. Difference between script in head and body?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Scripts in head can block rendering unless async/defer is used. End-of-body scripts usually allow faster initial render.
+        </div>
+        <div class="practical">
+<pre>
+&lt;script defer src="app.js"&gt;&lt;/script&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 44 -->
+    <details>
+      <summary>44. What is accessibility in HTML?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Accessibility means making websites usable for disabled users, screen readers, and keyboard navigation.
+        </div>
+        <div class="practical">
+          <p>Examples include semantic tags, alt text, and form labels.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 45 -->
+    <details>
+      <summary>45. Why use label in forms?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          label improves accessibility and user experience by connecting text with form fields.
+        </div>
+        <div class="practical">
+<pre>
+&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input type="email" id="email"&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 46 -->
+    <details>
+      <summary>46. Difference between button and input button?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          <code>button</code> is more flexible and can contain HTML; input button is text-only.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>button</th><th>input</th></tr>
+            <tr><td>Can contain HTML</td><td>Text only</td></tr>
+            <tr><td>Flexible</td><td>Limited</td></tr>
+          </table>
+<pre>
+&lt;button&gt;
+  &lt;strong&gt;Click&lt;/strong&gt;
+&lt;/button&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 47 -->
+    <details>
+      <summary>47. What are global attributes in HTML?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Global attributes can be used on most HTML elements.
+        </div>
+        <div class="practical">
+          <p>Examples: <code>id</code>, <code>class</code>, <code>style</code>, <code>title</code>, <code>hidden</code></p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 48 -->
+    <details>
+      <summary>48. Difference between readonly and disabled?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          readonly prevents editing but value is submitted; disabled blocks interaction and value is not submitted.
+        </div>
+        <div class="practical">
+          <table>
+            <tr><th>readonly</th><th>disabled</th></tr>
+            <tr><td>User cannot edit</td><td>Completely disabled</td></tr>
+            <tr><td>Value submitted</td><td>Value not submitted</td></tr>
+          </table>
+<pre>
+&lt;input readonly&gt;
+&lt;input disabled&gt;
+</pre>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 49 -->
+    <details>
+      <summary>49. What is progressive enhancement?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Progressive enhancement means building basic functionality first, then adding advanced features.
+        </div>
+        <div class="practical">
+          <p>Goal: better compatibility and accessibility.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Question 50 -->
+    <details>
+      <summary>50. What are deprecated tags in HTML?</summary>
+      <div class="content">
+        <div class="answer">
+          <strong>Answer:</strong>
+          Deprecated tags are old tags that should no longer be used in modern HTML.
+        </div>
+        <div class="practical">
+          <p>Examples: <code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;marquee&gt;</code></p>
+          <p>Use CSS instead.</p>
+        </div>
+      </div>
+    </details>
+
+  </div>
+
+  <script>
+
+    const canvas = document.getElementById('myCanvas');
+
+    if(canvas){
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = 'blue';
+      ctx.fillRect(20, 20, 120, 60);
+
+      ctx.fillStyle = 'white';
+      ctx.font = '20px Arial';
+      ctx.fillText('Canvas', 40, 58);
+    }
+
+  </script>
+
+</body>
+</html>
