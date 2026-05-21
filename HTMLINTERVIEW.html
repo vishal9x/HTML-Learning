@@ -105,6 +105,46 @@
       color: #1f2937;
     }
 
+    .output-label {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #059669;
+      font-size: 15px;
+    }
+
+    .output-preview {
+      margin-top: 8px;
+      padding: 15px 20px;
+      background: #ffffff;
+      border: 2px dashed #059669;
+      border-radius: 8px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .output-preview ol,
+    .output-preview ul {
+      padding-left: 22px;
+    }
+
+    .output-preview dl dt {
+      font-weight: bold;
+    }
+
+    .output-preview dl dd {
+      margin-left: 20px;
+    }
+
+    .output-no-visual {
+      margin-top: 8px;
+      padding: 10px 14px;
+      background: #fefce8;
+      border-left: 4px solid #ca8a04;
+      border-radius: 8px;
+      color: #713f12;
+      font-size: 14px;
+    }
+
     code {
       background: #111827;
       color: #f9fafb;
@@ -218,6 +258,11 @@
 &lt;h1&gt;This is heading&lt;/h1&gt;
 &lt;p&gt;This is paragraph&lt;/p&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <h1 style="font-size:1.8em;font-weight:bold;margin-bottom:6px;">This is heading</h1>
+            <p>This is paragraph</p>
+          </div>
         </div>
       </div>
     </details>
@@ -265,6 +310,21 @@
 &lt;article&gt;&lt;/article&gt;
 &lt;footer&gt;&lt;/footer&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div style="background:#1f2937;color:white;padding:6px 12px;border-radius:5px;margin-bottom:4px;">
+              &lt;header&gt; — top section</div>
+            <div style="background:#374151;color:white;padding:6px 12px;border-radius:5px;margin-bottom:4px;">
+              &lt;nav&gt; — navigation</div>
+            <div style="background:#4b5563;color:white;padding:6px 12px;border-radius:5px;margin-bottom:4px;">
+              &lt;section&gt; — grouped content</div>
+            <div style="background:#6b7280;color:white;padding:6px 12px;border-radius:5px;margin-bottom:4px;">
+              &lt;article&gt; — self-contained content</div>
+            <div style="background:#9ca3af;color:white;padding:6px 12px;border-radius:5px;">&lt;footer&gt; — bottom
+              section</div>
+            <p style="margin-top:8px;font-size:13px;color:#555;">These render just like divs visually — the difference
+              is meaningful semantics for SEO and screen readers.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -292,6 +352,13 @@
   &lt;p&gt;Practice semantic HTML daily.&lt;/p&gt;
 &lt;/article&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <article>
+              <h2 style="font-size:1.2em;font-weight:bold;margin-bottom:4px;">Interview Tips</h2>
+              <p>Practice semantic HTML daily.</p>
+            </article>
+          </div>
         </div>
       </div>
     </details>
@@ -330,6 +397,15 @@
 &lt;div class="box"&gt;&lt;/div&gt;
 &lt;div class="box"&gt;&lt;/div&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div style="background:#2563eb;color:white;padding:8px 12px;border-radius:6px;margin-bottom:6px;">#main —
+              unique (only one per page)</div>
+            <div style="background:#16a34a;color:white;padding:8px 12px;border-radius:6px;margin-bottom:4px;">.box —
+              shared class (first element)</div>
+            <div style="background:#16a34a;color:white;padding:8px 12px;border-radius:6px;">.box — shared class (second
+              element)</div>
+          </div>
         </div>
       </div>
     </details>
@@ -360,6 +436,15 @@
 &lt;div&gt;I take full width&lt;/div&gt;
 &lt;span&gt;I take only content width&lt;/span&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div style="background:#93c5fd;padding:8px 12px;border-radius:5px;margin-bottom:8px;">I take full width
+              &larr; div stretches across the full line</div>
+            <p>
+              <span style="background:#fca5a5;padding:4px 8px;border-radius:4px;">I take only content width</span>
+              <span style="color:#555;font-size:13px;"> &larr; span stays inline</span>
+            </p>
+          </div>
         </div>
       </div>
     </details>
@@ -377,6 +462,10 @@
           <pre>
 &lt;!DOCTYPE html&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-no-visual">&#9888; No visible output on the page — DOCTYPE must be the very first line of
+            an HTML file. It instructs the browser to use modern HTML5 rendering. Without it, the browser falls into
+            "quirks mode" and may render the page incorrectly.</div>
         </div>
       </div>
     </details>
@@ -391,13 +480,24 @@
         </div>
         <div class="practical">
           <p>Examples: <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>,
-            <code>&lt;input&gt;</code>, <code>&lt;meta&gt;</code></p>
+            <code>&lt;input&gt;</code>, <code>&lt;meta&gt;</code>
+          </p>
           <p class="example-label">Example:</p>
           <pre>
 &lt;img src="photo.jpg" alt="Demo image"&gt;
 &lt;br&gt;
 &lt;hr&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div
+              style="width:100px;height:70px;background:#d1d5db;border:1px dashed #9ca3af;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#6b7280;">
+              🖼 photo.jpg</div>
+            <p style="font-size:13px;color:#555;margin:4px 0 8px;">Image renders here (or alt text if image fails)</p>
+            <p>Text before break<br>Text after break &larr; &lt;br&gt; forces next line</p>
+            <hr style="margin:10px 0;border:1px solid #9ca3af;">
+            <p style="font-size:13px;color:#555;">&lt;hr&gt; draws this horizontal line</p>
+          </div>
         </div>
       </div>
     </details>
@@ -435,6 +535,16 @@
 
 &lt;span&gt;Inline text&lt;/span&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div style="background:#bfdbfe;padding:8px 12px;border-radius:5px;margin-bottom:8px;">Main container &larr;
+              div is block, takes full row</div>
+            <p>
+              Some text before &nbsp;
+              <span style="background:#fde68a;padding:3px 7px;border-radius:4px;">Inline text</span>
+              &nbsp; continues on same line &larr; span is inline
+            </p>
+          </div>
         </div>
       </div>
     </details>
@@ -453,6 +563,13 @@
 &lt;a href="https://google.com"&gt;Google&lt;/a&gt;
 </pre>
           <p>Here <code>href</code> is an attribute.</p>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer"
+              style="color:#2563eb;text-decoration:underline;">Google</a>
+            <p style="font-size:13px;color:#555;margin-top:6px;">Blue underlined text. Clicking it navigates to
+              https://google.com. The URL is hidden — only "Google" is visible.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -486,6 +603,12 @@
 
 &lt;strong&gt;Important&lt;/strong&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><b>Bold</b> &larr; visually bold, no semantic meaning</p>
+            <p style="margin-top:6px;"><strong>Important</strong> &larr; visually bold AND screen readers announce it as
+              important</p>
+          </div>
         </div>
       </div>
     </details>
@@ -533,6 +656,15 @@
   &lt;input name="email" type="email"&gt;
 &lt;/form&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>GET:</strong> After submit, URL becomes: <code
+                style="background:#f1f5f9;color:#0f172a;border:1px solid #cbd5e1;border-radius:4px;padding:2px 6px;">/search?q=your+text</code>
+            </p>
+            <p style="margin-top:8px;"><strong>POST:</strong> After submit, URL stays: <code
+                style="background:#f1f5f9;color:#0f172a;border:1px solid #cbd5e1;border-radius:4px;padding:2px 6px;">/register</code>
+              — data is hidden in request body</p>
+          </div>
         </div>
       </div>
     </details>
@@ -555,6 +687,20 @@
 &lt;input type="number"&gt;
 &lt;input type="file"&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p style="margin-bottom:6px;">Text: <input type="text" placeholder="Enter text"
+                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;width:180px;"></p>
+            <p style="margin-bottom:6px;">Email: <input type="email" placeholder="user@example.com"
+                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;width:180px;"></p>
+            <p style="margin-bottom:6px;">Password: <input type="password" placeholder="••••••••"
+                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;width:180px;"></p>
+            <p style="margin-bottom:6px;">Date: <input type="date"
+                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;"></p>
+            <p style="margin-bottom:6px;">Number: <input type="number"
+                style="padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:14px;width:80px;"></p>
+            <p>File: <input type="file" style="font-size:14px;"></p>
+          </div>
         </div>
       </div>
     </details>
@@ -577,6 +723,19 @@
             <li>Empty field</li>
             <li>Valid email format</li>
           </ul>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <form onsubmit="event.preventDefault(); this.querySelector('input').reportValidity();"
+              style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+              <input type="email" required placeholder="Try submitting empty or invalid"
+                style="padding:6px 10px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:260px;">
+              <button type="submit"
+                style="padding:6px 14px;background:#2563eb;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">Submit</button>
+            </form>
+            <p style="font-size:13px;color:#555;margin-top:8px;">Try clicking Submit with an empty field or invalid
+              email
+              — the browser shows a built-in error message.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -610,6 +769,21 @@
 
 &lt;input type="radio" name="gender"&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>Checkboxes</strong> — multiple can be checked:</p>
+            <p>
+              <label><input type="checkbox"> HTML &nbsp;</label>
+              <label><input type="checkbox"> CSS &nbsp;</label>
+              <label><input type="checkbox"> JS</label>
+            </p>
+            <p style="margin-top:10px;"><strong>Radio buttons</strong> — only one can be selected:</p>
+            <p>
+              <label><input type="radio" name="gender_demo"> Male &nbsp;</label>
+              <label><input type="radio" name="gender_demo"> Female &nbsp;</label>
+              <label><input type="radio" name="gender_demo"> Other</label>
+            </p>
+          </div>
         </div>
       </div>
     </details>
@@ -646,6 +820,13 @@
 localStorage.setItem("name", "Vishal");
 sessionStorage.setItem("user", "admin");
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-no-visual">&#9888; No visible output on the page. Data is stored silently in browser
+            memory.
+            Open DevTools (F12) &rarr; Application &rarr; Local Storage / Session Storage to see stored values. Try:
+            <code
+              style="background:#fef3c7;color:#92400e;padding:2px 5px;border-radius:3px;">localStorage.setItem("name","Vishal")</code>
+            in the browser Console tab.</div>
         </div>
       </div>
     </details>
@@ -665,6 +846,11 @@ sessionStorage.setItem("user", "admin");
           <pre>
 &lt;canvas id="myCanvas"&gt;&lt;/canvas&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p style="font-size:13px;color:#555;">The canvas above is drawn by JavaScript. You see a blue rectangle with
+              "Canvas" text — drawn pixel by pixel using the Canvas 2D API.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -691,6 +877,14 @@ sessionStorage.setItem("user", "admin");
   &lt;circle cx="50" cy="50" r="40" fill="tomato"&gt;&lt;/circle&gt;
 &lt;/svg&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <svg width="100" height="100" aria-label="SVG demo circle red">
+              <circle cx="50" cy="50" r="40" fill="tomato"></circle>
+            </svg>
+            <p style="font-size:13px;color:#555;margin-top:6px;">A crisp red circle that stays sharp at any zoom level.
+              Try zooming in — SVG never gets blurry.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -709,6 +903,17 @@ sessionStorage.setItem("user", "admin");
           <pre>
 document.getElementById("demo");
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p id="domDemoText" style="padding:8px;background:#f1f5f9;border-radius:5px;">I am the element with
+              id="domDemoText"</p>
+            <button
+              onclick="document.getElementById('domDemoText').style.color='#2563eb'; document.getElementById('domDemoText').textContent='DOM changed my text and color!';"
+              style="margin-top:8px;padding:6px 12px;background:#2563eb;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">Click
+              to change via DOM</button>
+            <p style="font-size:13px;color:#555;margin-top:6px;">Click the button — JavaScript uses the DOM to find the
+              element by id and change it live.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -750,6 +955,34 @@ document.cookie = "theme=dark; max-age=3600";
 localStorage.setItem("language", "en");
 sessionStorage.setItem("tabStep", "2");
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <table style="font-size:14px;width:100%;border-collapse:collapse;">
+              <tr style="background:#f1f5f9;">
+                <th style="padding:6px 10px;border:1px solid #cbd5e1;text-align:left;">Feature</th>
+                <th style="padding:6px 10px;border:1px solid #cbd5e1;text-align:left;">Visible on page?</th>
+                <th style="padding:6px 10px;border:1px solid #cbd5e1;text-align:left;">Where to see it</th>
+              </tr>
+              <tr>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">Cookie</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">No</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">DevTools &rarr; Application &rarr; Cookies</td>
+              </tr>
+              <tr>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">localStorage</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">No</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">DevTools &rarr; Application &rarr; Local Storage
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">sessionStorage</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">No</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">DevTools &rarr; Application &rarr; Session
+                  Storage
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </details>
@@ -768,6 +1001,11 @@ sessionStorage.setItem("tabStep", "2");
           <pre>
 &lt;iframe src="https://example.com"&gt;&lt;/iframe&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p style="font-size:13px;color:#555;">The iframe above embeds <strong>example.com</strong> directly on this
+              page. It appears as a boxed area showing the full contents of another website inside your webpage.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -804,6 +1042,17 @@ sessionStorage.setItem("tabStep", "2");
 &lt;script async src="app.js"&gt;&lt;/script&gt;
 &lt;script defer src="app.js"&gt;&lt;/script&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div style="border:1px solid #cbd5e1;border-radius:6px;overflow:hidden;font-size:13px;">
+              <div style="background:#fef3c7;padding:8px 12px;"><strong>async:</strong> Script downloads in parallel →
+                runs immediately when ready (may run before HTML is fully parsed)</div>
+              <div style="background:#dcfce7;padding:8px 12px;"><strong>defer:</strong> Script downloads in parallel →
+                waits until HTML fully parsed, then runs in order</div>
+            </div>
+            <p style="font-size:13px;color:#555;margin-top:8px;">No visible change on page. The difference is loading
+              behavior. Use <code>defer</code> for most scripts to avoid blocking rendering.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -830,6 +1079,17 @@ sessionStorage.setItem("tabStep", "2");
   &lt;button type="submit"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <form onsubmit="event.preventDefault(); alert('Form submitted!');">
+              <input type="text" placeholder="Name" required
+                style="display:block;width:100%;padding:8px 10px;margin-bottom:8px;border:1px solid #ccc;border-radius:5px;font-size:14px;">
+              <input type="email" placeholder="Email" required
+                style="display:block;width:100%;padding:8px 10px;margin-bottom:8px;border:1px solid #ccc;border-radius:5px;font-size:14px;">
+              <button type="submit"
+                style="padding:8px 20px;background:#2563eb;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;font-weight:bold;">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </details>
@@ -858,6 +1118,21 @@ sessionStorage.setItem("tabStep", "2");
 &lt;/section&gt;
 &lt;footer&gt;Footer&lt;/footer&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div
+              style="background:#1f2937;color:white;padding:8px 14px;border-radius:6px;margin-bottom:4px;text-align:center;font-weight:bold;">
+              Header</div>
+            <div style="background:#374151;color:white;padding:6px 14px;border-radius:6px;margin-bottom:4px;">Navbar:
+              Home
+              | About | Contact</div>
+            <div
+              style="background:#f1f5f9;border:1px solid #cbd5e1;padding:10px 14px;border-radius:6px;margin-bottom:4px;">
+              <article>Article: Main page content goes here</article>
+            </div>
+            <div style="background:#1f2937;color:white;padding:8px 14px;border-radius:6px;text-align:center;">Footer
+              &copy; 2024</div>
+          </div>
         </div>
       </div>
     </details>
@@ -880,6 +1155,16 @@ sessionStorage.setItem("tabStep", "2");
   &lt;/section&gt;
 &lt;/main&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <main>
+              <section style="border:1px solid #cbd5e1;border-radius:6px;padding:10px 14px;">
+                <h2 style="font-size:1.1em;font-weight:bold;">Popular Questions</h2>
+                <p style="font-size:13px;color:#555;margin-top:4px;">Visually same as a div, but &lt;main&gt; and
+                  &lt;section&gt; give clear landmark meaning to screen readers and search engines.</p>
+              </section>
+            </main>
+          </div>
         </div>
       </div>
     </details>
@@ -898,6 +1183,20 @@ sessionStorage.setItem("tabStep", "2");
 &lt;img src="cat.jpg" alt="Cute cat"&gt;
 </pre>
           <p>If the image cannot load, users and screen readers can still understand the content from the alt text.</p>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>When image loads:</strong></p>
+            <div
+              style="width:100px;height:70px;background:#d1d5db;border:1px dashed #9ca3af;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#6b7280;">
+              🐱 cat.jpg</div>
+            <p style="margin-top:10px;"><strong>When image fails to load:</strong></p>
+            <div
+              style="display:inline-flex;align-items:center;gap:6px;border:1px solid #ccc;padding:5px 8px;border-radius:4px;font-size:13px;color:#555;background:#f9fafb;">
+              <span>🖼</span><span>Cute cat</span>
+            </div>
+            <p style="font-size:13px;color:#555;margin-top:6px;">The alt text "Cute cat" is shown when the image fails —
+              and always read aloud by screen readers.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -923,7 +1222,29 @@ sessionStorage.setItem("tabStep", "2");
           <pre>
 &lt;!-- Browser parses HTML to DOM, then paints after CSSOM + layout --&gt;
 </pre>
-          <h3 style="margin-top: 20px;">Important Tip for Interviews</h3>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+              <div style="background:#2563eb;color:white;padding:6px 12px;border-radius:5px;">1. You type URL → Browser
+                sends request to server</div>
+              <div style="text-align:center;font-size:16px;">&#8595;</div>
+              <div style="background:#16a34a;color:white;padding:6px 12px;border-radius:5px;">2. Server sends back HTML
+                file</div>
+              <div style="text-align:center;font-size:16px;">&#8595;</div>
+              <div style="background:#ca8a04;color:white;padding:6px 12px;border-radius:5px;">3. Browser builds DOM from
+                HTML</div>
+              <div style="text-align:center;font-size:16px;">&#8595;</div>
+              <div style="background:#dc2626;color:white;padding:6px 12px;border-radius:5px;">4. CSS loaded → CSSOM
+                built
+              </div>
+              <div style="text-align:center;font-size:16px;">&#8595;</div>
+              <div style="background:#7c3aed;color:white;padding:6px 12px;border-radius:5px;">5. JavaScript runs</div>
+              <div style="text-align:center;font-size:16px;">&#8595;</div>
+              <div style="background:#0e7490;color:white;padding:6px 12px;border-radius:5px;">6. Render tree &rarr;
+                Layout
+                &rarr; Paint &rarr; Page visible</div>
+            </div>
+          </div>
           <p>Interviewers usually check semantic understanding, practical coding, accessibility awareness, clean
             structure, and confidence while explaining.</p>
           <p>Frontend interviews often combine HTML, CSS, JavaScript, responsive design, and browser behavior.</p>
@@ -963,6 +1284,14 @@ sessionStorage.setItem("tabStep", "2");
 &lt;br /&gt;
 &lt;img src="img.jpg" /&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p>Line one<br>Line two &larr; <code>&lt;br /&gt;</code> (XHTML style) and <code>&lt;br&gt;</code> (HTML5
+              style) both work the same in modern browsers</p>
+            <p style="font-size:13px;color:#555;margin-top:8px;">XHTML requires self-closing slash on void elements.
+              HTML5
+              allows both forms.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -982,6 +1311,10 @@ sessionStorage.setItem("tabStep", "2");
 &lt;meta name="description" content="Website description"&gt;
 </pre>
           <p>Used for SEO, browser settings, and responsiveness.</p>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-no-visual">&#9888; Meta tags produce no visible output on the page. They live in the
+            &lt;head&gt; section. Their effects are: search engine descriptions, character encoding, social media
+            previews, and mobile scaling. Check them in DevTools &rarr; Elements &rarr; head.</div>
         </div>
       </div>
     </details>
@@ -999,6 +1332,26 @@ sessionStorage.setItem("tabStep", "2");
           <pre>
 &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;">
+              <div style="text-align:center;">
+                <div
+                  style="width:60px;height:100px;border:2px solid #374151;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;background:#f8fafc;">
+                  Content fits screen</div>
+                <p style="font-size:12px;margin-top:4px;color:#16a34a;font-weight:bold;">WITH viewport tag</p>
+              </div>
+              <div style="text-align:center;">
+                <div
+                  style="width:60px;height:100px;border:2px solid #374151;border-radius:8px;overflow:hidden;position:relative;background:#fef2f2;">
+                  <div
+                    style="width:180px;font-size:6px;transform:scale(0.33);transform-origin:top left;padding:4px;color:#888;">
+                    Desktop layout squeezed into mobile...</div>
+                </div>
+                <p style="font-size:12px;margin-top:4px;color:#dc2626;font-weight:bold;">WITHOUT viewport tag</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </details>
@@ -1031,6 +1384,13 @@ sessionStorage.setItem("tabStep", "2");
 &lt;link rel="stylesheet" href="style.css"&gt;
 &lt;a href="https://google.com"&gt;Google&lt;/a&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>&lt;link&gt;</strong> — invisible, loads the CSS file in the background (no text on page)</p>
+            <p style="margin-top:8px;"><strong>&lt;a&gt;</strong> — shows clickable text: <a href="https://google.com"
+                target="_blank" rel="noopener noreferrer" style="color:#2563eb;text-decoration:underline;">Google</a>
+            </p>
+          </div>
         </div>
       </div>
     </details>
@@ -1050,6 +1410,18 @@ sessionStorage.setItem("tabStep", "2");
 
 element.dataset.id
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div id="dataDemo" data-id="101" data-name="Vishal"
+              style="padding:8px 12px;background:#f1f5f9;border-radius:5px;font-size:14px;">This div has hidden data:
+              data-id="101" and data-name="Vishal"</div>
+            <button
+              onclick="var el=document.getElementById('dataDemo'); alert('data-id: ' + el.dataset.id + '\ndata-name: ' + el.dataset.name);"
+              style="margin-top:8px;padding:6px 12px;background:#2563eb;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;">Read
+              data attributes</button>
+            <p style="font-size:13px;color:#555;margin-top:6px;">The data is invisible on the page. Click the button to
+              see JavaScript read it via dataset.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1082,6 +1454,12 @@ element.dataset.id
 &lt;em&gt;This is important emphasis&lt;/em&gt;
 &lt;i&gt;Book title in italic&lt;/i&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><em>This is important emphasis</em> &larr; &lt;em&gt; italic + screen readers stress this word</p>
+            <p style="margin-top:6px;"><i>Book title in italic</i> &larr; &lt;i&gt; looks the same but has no semantic
+              stress</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1117,6 +1495,20 @@ element.dataset.id
 
 &lt;div class="card"&gt;Generic box&lt;/div&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <section style="border:2px solid #2563eb;border-radius:6px;padding:10px 14px;margin-bottom:10px;">
+              <h2 style="font-size:1em;font-weight:bold;color:#2563eb;">Pricing</h2>
+              <p style="font-size:13px;color:#555;">&lt;section&gt; — semantic landmark (search engines and screen
+                readers
+                recognize this as a meaningful section)</p>
+            </section>
+            <div style="border:2px solid #9ca3af;border-radius:6px;padding:10px 14px;">
+              <p>Generic box</p>
+              <p style="font-size:13px;color:#555;">&lt;div&gt; — generic container (no semantic meaning, just a box)
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </details>
@@ -1136,6 +1528,33 @@ element.dataset.id
 &amp;gt;   for &gt;
 &amp;nbsp; for space
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <table style="font-size:14px;border-collapse:collapse;width:100%;">
+              <tr style="background:#f1f5f9;">
+                <th style="padding:6px 10px;border:1px solid #cbd5e1;">Entity code</th>
+                <th style="padding:6px 10px;border:1px solid #cbd5e1;">Renders as</th>
+              </tr>
+              <tr>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;font-family:monospace;">&amp;lt;</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">&lt;</td>
+              </tr>
+              <tr>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;font-family:monospace;">&amp;gt;</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">&gt;</td>
+              </tr>
+              <tr>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;font-family:monospace;">&amp;nbsp;</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">
+                  word&nbsp;&nbsp;&nbsp;spaced&nbsp;&nbsp;&nbsp;word
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;font-family:monospace;">&amp;amp;</td>
+                <td style="padding:6px 10px;border:1px solid #cbd5e1;">&amp;</td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </details>
@@ -1153,6 +1572,20 @@ element.dataset.id
           <pre>
 &lt;img src="car.jpg" alt="Sports car"&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>Scenario 1 — Image loads:</strong></p>
+            <div
+              style="width:120px;height:80px;background:#d1d5db;border:1px dashed #9ca3af;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#6b7280;">
+              🚗 car.jpg</div>
+            <p style="margin-top:10px;"><strong>Scenario 2 — Image fails to load:</strong></p>
+            <div
+              style="display:inline-flex;align-items:center;gap:5px;border:1px solid #ccc;padding:5px 9px;border-radius:4px;font-size:13px;color:#555;background:#f9fafb;">
+              <span>🖼</span><span>Sports car</span>
+            </div>
+            <p style="font-size:13px;color:#555;margin-top:6px;">Screen readers always read the alt text aloud, whether
+              the image loads or not.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1166,6 +1599,21 @@ element.dataset.id
           Ordered list uses numbers, unordered list uses bullets, description list uses term-description pairs.
         </div>
         <div class="practical">
+          <h3>Rendered preview</h3>
+          <div class="demo-box">
+            <ol>
+              <li>Item</li>
+            </ol>
+
+            <ul>
+              <li>Item</li>
+            </ul>
+
+            <dl>
+              <dt>HTML</dt>
+              <dd>Markup language</dd>
+            </dl>
+          </div>
           <p class="example-label">Example:</p>
           <pre>
 &lt;ol&gt;
@@ -1212,6 +1660,23 @@ element.dataset.id
   &lt;/tr&gt;
 &lt;/table&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>cellpadding</strong> — space inside each cell:</p>
+            <table style="border-collapse:collapse;margin-bottom:12px;">
+              <tr>
+                <td style="border:1px solid #999;padding:14px;background:#dbeafe;">Padding 14px inside</td>
+                <td style="border:1px solid #999;padding:14px;background:#dbeafe;">Another cell</td>
+              </tr>
+            </table>
+            <p><strong>cellspacing</strong> — gap between cells:</p>
+            <table style="border-collapse:separate;border-spacing:10px;">
+              <tr>
+                <td style="border:1px solid #999;padding:6px 10px;background:#dcfce7;">Cell A</td>
+                <td style="border:1px solid #999;padding:6px 10px;background:#dcfce7;">Cell B</td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </details>
@@ -1240,6 +1705,19 @@ p {
 External:
 &lt;link rel="stylesheet" href="style.css"&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>Inline:</strong> <span style="color:red;">This text is red</span> &larr; style applied directly
+              on
+              the element</p>
+            <p style="margin-top:8px;"><strong>Internal:</strong> <span style="color:red;">This text is also red</span>
+              &larr; styled by a &lt;style&gt; block in &lt;head&gt;</p>
+            <p style="margin-top:8px;"><strong>External:</strong> <span style="color:red;">This text is red too</span>
+              &larr; styled via an external .css file (linked in &lt;head&gt;)</p>
+            <p style="font-size:13px;color:#555;margin-top:8px;">All three produce the same visual result — the
+              difference
+              is where the CSS is written.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1272,6 +1750,17 @@ External:
 &lt;img src="img.jpg"&gt;
 &lt;a href="page.html"&gt;Page&lt;/a&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>src</strong> — embeds and displays a resource:</p>
+            <div
+              style="width:90px;height:60px;background:#d1d5db;border:1px dashed #9ca3af;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#6b7280;margin-bottom:10px;">
+              🖼 img.jpg</div>
+            <p><strong>href</strong> — creates a clickable navigation link:</p>
+            <a href="#" style="color:#2563eb;text-decoration:underline;">Page</a>
+            <p style="font-size:13px;color:#555;margin-top:6px;">src loads a resource into the page. href points to a
+              location to navigate to.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1297,6 +1786,27 @@ External:
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div style="border:1px solid #cbd5e1;border-radius:6px;overflow:hidden;font-size:13px;">
+              <div style="background:#1f2937;color:#a3e635;padding:4px 10px;font-family:monospace;">&lt;!DOCTYPE
+                html&gt;
+                &larr; tells browser: use HTML5</div>
+              <div style="background:#1e3a5f;color:#93c5fd;padding:4px 10px;font-family:monospace;">&lt;html&gt; &larr;
+                root of the whole page</div>
+              <div style="background:#1e3a5f;color:#fde68a;padding:4px 10px 4px 24px;font-family:monospace;">
+                &lt;head&gt;
+                &larr; metadata: title, CSS, meta</div>
+              <div style="background:#1e3a5f;color:#86efac;padding:4px 10px 4px 36px;font-family:monospace;">
+                &lt;title&gt;Page&lt;/title&gt; &larr; shown in browser tab</div>
+              <div style="background:#1e3a5f;color:#fde68a;padding:4px 10px 4px 24px;font-family:monospace;">
+                &lt;body&gt;
+                &larr; visible content goes here</div>
+              <div style="background:#374151;color:#9ca3af;padding:4px 10px 4px 36px;font-family:monospace;">... your
+                HTML
+                content ...</div>
+            </div>
+          </div>
         </div>
       </div>
     </details>
@@ -1320,6 +1830,16 @@ External:
 &lt;/main&gt;
 &lt;footer&gt;Site Footer&lt;/footer&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <header
+              style="background:#1f2937;color:white;padding:8px 14px;border-radius:5px;margin-bottom:4px;font-weight:bold;">
+              Site Header</header>
+            <main style="border:1px solid #cbd5e1;border-radius:5px;padding:10px 14px;margin-bottom:4px;">
+              <article>Blog content — semantic landmark: screen readers identify this as main content</article>
+            </main>
+            <footer style="background:#374151;color:white;padding:8px 14px;border-radius:5px;">Site Footer</footer>
+          </div>
         </div>
       </div>
     </details>
@@ -1337,6 +1857,17 @@ External:
           <pre>
 &lt;link rel="icon" href="favicon.ico"&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div
+              style="display:inline-flex;align-items:center;gap:8px;background:#1f2937;color:white;padding:6px 14px;border-radius:6px;font-size:13px;">
+              <span style="font-size:16px;">&#127760;</span>
+              <span>My Website — Page Title</span>
+              <span style="background:#374151;padding:2px 6px;border-radius:3px;font-size:11px;">x</span>
+            </div>
+            <p style="font-size:13px;color:#555;margin-top:8px;">The small icon shown before the page title in browser
+              tabs and bookmarks is the favicon.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1355,6 +1886,17 @@ External:
           <pre>
 &lt;script defer src="app.js"&gt;&lt;/script&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <div style="border:1px solid #cbd5e1;border-radius:6px;overflow:hidden;font-size:13px;">
+              <div style="background:#fef3c7;padding:7px 12px;"><strong>In &lt;head&gt; without defer:</strong> Script
+                blocks HTML parsing → page renders slower</div>
+              <div style="background:#dcfce7;padding:7px 12px;"><strong>In &lt;head&gt; with defer:</strong> Script
+                downloads in background → runs after HTML is fully parsed → faster render ✓</div>
+              <div style="background:#f1f5f9;padding:7px 12px;"><strong>At end of &lt;body&gt;:</strong> Same effect as
+                defer — HTML is parsed first, script runs last</div>
+            </div>
+          </div>
         </div>
       </div>
     </details>
@@ -1376,6 +1918,16 @@ External:
 
 &lt;img src="profile.jpg" alt="Profile photo of user"&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><label for="a11yDemoInput" style="font-weight:bold;cursor:pointer;">Name</label> &larr; clicking this
+              label
+              focuses the input below</p>
+            <input id="a11yDemoInput" type="text" aria-required="true" placeholder="Click the label above"
+              style="display:block;margin-top:6px;padding:6px 10px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:240px;">
+            <p style="font-size:13px;color:#555;margin-top:8px;">Screen readers announce: "Name, text field, required."
+              Without the label, they would just say "text field" — useless.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1394,6 +1946,16 @@ External:
 &lt;label for="email"&gt;Email&lt;/label&gt;
 &lt;input type="email" id="email"&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><label for="labelDemoEmail" style="font-weight:bold;cursor:pointer;color:#2563eb;">Email</label> &nbsp;
+              <input type="email" id="labelDemoEmail" placeholder="Click label to focus"
+                style="padding:5px 9px;border:1px solid #ccc;border-radius:5px;font-size:14px;">
+            </p>
+            <p style="font-size:13px;color:#555;margin-top:6px;">Click the word <strong>Email</strong> above — the
+              cursor
+              jumps into the input field. That's the label &lt;for&gt; / input &lt;id&gt; connection.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1427,6 +1989,16 @@ External:
   &lt;strong&gt;Click&lt;/strong&gt;
 &lt;/button&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>&lt;button&gt;</strong> — can hold any HTML inside:</p>
+            <button
+              style="padding:8px 16px;background:#2563eb;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;margin-bottom:10px;">&#128077;
+              <strong>Click Me</strong></button>
+            <p><strong>&lt;input type="button"&gt;</strong> — plain text only:</p>
+            <input type="button" value="Click Me"
+              style="padding:8px 16px;border:1px solid #ccc;border-radius:5px;cursor:pointer;font-size:14px;background:#f1f5f9;">
+          </div>
         </div>
       </div>
     </details>
@@ -1446,6 +2018,16 @@ External:
           <pre>
 &lt;p id="intro" class="lead" title="Intro text" hidden&gt;Hello&lt;/p&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p id="globalAttrDemo" class="lead" title="Hover tooltip from title attribute"
+              style="padding:8px 12px;background:#f1f5f9;border-radius:5px;cursor:help;">Hover over me to see the title
+              tooltip &#8679;</p>
+            <p style="font-size:13px;color:#555;margin-top:8px;">The <code>id</code>, <code>class</code>, and
+              <code>style</code> affect CSS/JS. The <code>title</code> shows a tooltip on hover. The <code>hidden</code>
+              attribute makes elements invisible.
+            </p>
+          </div>
         </div>
       </div>
     </details>
@@ -1478,6 +2060,15 @@ External:
 &lt;input readonly&gt;
 &lt;input disabled&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>readonly</strong> — visible and selectable, but you cannot edit it:</p>
+            <input type="text" readonly value="Cannot edit this"
+              style="display:block;margin:4px 0 12px;padding:6px 10px;border:1px solid #ccc;border-radius:5px;font-size:14px;width:220px;background:#f8fafc;color:#374151;">
+            <p><strong>disabled</strong> — grayed out, cannot interact, not submitted:</p>
+            <input type="text" disabled value="Disabled field"
+              style="display:block;margin:4px 0;padding:6px 10px;border:1px solid #d1d5db;border-radius:5px;font-size:14px;width:220px;background:#f3f4f6;color:#9ca3af;cursor:not-allowed;">
+          </div>
         </div>
       </div>
     </details>
@@ -1497,6 +2088,15 @@ External:
 &lt;button type="submit"&gt;Save&lt;/button&gt;
 &lt;!-- Works without JavaScript; JS can later add loading spinner and validation --&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>Base layer — works without JavaScript:</strong></p>
+            <button type="submit"
+              style="padding:8px 20px;background:#16a34a;color:white;border:none;border-radius:5px;cursor:pointer;font-size:14px;font-weight:bold;">Save</button>
+            <p style="font-size:13px;color:#555;margin-top:8px;">This button works even with JavaScript disabled.
+              Progressive enhancement means you build this foundation first, then layer on enhancements (spinner,
+              validation, async save) for browsers that support them.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1517,6 +2117,15 @@ External:
 &lt;!-- Old: &lt;font color="red"&gt;Text&lt;/font&gt; --&gt;
 &lt;p style="color: red;"&gt;Text&lt;/p&gt;
 </pre>
+          <p class="output-label">&#128064; Output in browser:</p>
+          <div class="output-preview">
+            <p><strong>Old deprecated way (<code>&lt;font&gt;</code>):</strong></p>
+            <p style="color:red;font-size:16px;">Text &larr; same red result</p>
+            <p style="margin-top:8px;"><strong>Modern CSS way (<code>style="color:red"</code>):</strong></p>
+            <p style="color:red;font-size:16px;">Text &larr; same red result, correct approach</p>
+            <p style="font-size:13px;color:#555;margin-top:8px;">Both look identical — but <code>&lt;font&gt;</code> is
+              removed from HTML5. Always use CSS for presentation.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1537,6 +2146,8 @@ External:
       ctx.font = '20px Arial';
       ctx.fillText('Canvas', 40, 58);
     }
+
+
 
   </script>
 
